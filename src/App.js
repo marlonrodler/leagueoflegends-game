@@ -2,9 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  function sum(x, y){
-    return x - y;
-  }
 
   return (
     <div className="App">
