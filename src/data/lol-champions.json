@@ -1,0 +1,812 @@
+[
+  {
+    "name": "Aatrox",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
+  },
+  {
+    "name": "Ahri",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg"
+  },
+  {
+    "name": "Akali",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Akali_0.jpg"
+  },
+  {
+    "name": "Akshan",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Akshan_0.jpg"
+  },
+  {
+    "name": "Alistar",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Alistar_0.jpg"
+  },
+  {
+    "name": "Amumu",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Amumu_0.jpg"
+  },
+  {
+    "name": "Anivia",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Anivia_0.jpg"
+  },
+  {
+    "name": "Annie",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Annie_0.jpg"
+  },
+  {
+    "name": "Aphelios",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aphelios_0.jpg"
+  },
+  {
+    "name": "Ashe",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ashe_0.jpg"
+  },
+  {
+    "name": "Aurelion Sol",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/AurelionSol_0.jpg"
+  },
+  {
+    "name": "Azir",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Azir_0.jpg"
+  },
+  {
+    "name": "Bardo",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Bard_0.jpg"
+  },
+  {
+    "name": "Bel'Veth",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Belveth_0.jpg"
+  },
+  {
+    "name": "Blitzcrank",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Blitzcrank_0.jpg"
+  },
+  {
+    "name": "Brand",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Brand_0.jpg"
+  },
+  {
+    "name": "Braum",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Braum_0.jpg"
+  },
+  {
+    "name": "Caitlyn",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Caitlyn_0.jpg"
+  },
+  {
+    "name": "Camille",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_0.jpg"
+  },
+  {
+    "name": "Cassiopeia",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Cassiopeia_0.jpg"
+  },
+  {
+    "name": "Cho'gath",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Chogath_0.jpg"
+  },
+  {
+    "name": "Corki",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Corki_0.jpg"
+  },
+  {
+    "name": "Darius",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Darius_0.jpg"
+  },
+  {
+    "name": "Diana",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Diana_0.jpg"
+  },
+  {
+    "name": "Dr. Mundo",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/DrMundo_0.jpg"
+  },
+  {
+    "name": "Draven",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Draven_0.jpg"
+  },
+  {
+    "name": "Ekko",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ekko_0.jpg"
+  },
+  {
+    "name": "Elise",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Elise_0.jpg"
+  },
+  {
+    "name": "Evelynn",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Evelynn_0.jpg"
+  },
+  {
+    "name": "Ezreal",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ezreal_0.jpg"
+  },
+  {
+    "name": "Fiddlesticks",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fiddlesticks_0.jpg"
+  },
+  {
+    "name": "Fiora",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fiora_0.jpg"
+  },
+  {
+    "name": "Fizz",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fizz_0.jpg"
+  },
+  {
+    "name": "Galio",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Galio_0.jpg"
+  },
+  {
+    "name": "Gangplank",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gangplank_0.jpg"
+  },
+  {
+    "name": "Garen",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Garen_0.jpg"
+  },
+  {
+    "name": "Gnar",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gnar_0.jpg"
+  },
+  {
+    "name": "Gragas",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gragas_0.jpg"
+  },
+  {
+    "name": "Graves",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Graves_0.jpg"
+  },
+  {
+    "name": "Gwen",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gwen_0.jpg"
+  },
+  {
+    "name": "Hecarim",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Hecarim_0.jpg"
+  },
+  {
+    "name": "Heimerdinger",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Heimerdinger_0.jpg"
+  },
+  {
+    "name": "Illaoi",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Illaoi_0.jpg"
+  },
+  {
+    "name": "Irelia",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Irelia_0.jpg"
+  },
+  {
+    "name": "Ivern",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ivern_0.jpg"
+  },
+  {
+    "name": "Janna",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Janna_0.jpg"
+  },
+  {
+    "name": "Jarvan IV",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/JarvanIV_0.jpg"
+  },
+  {
+    "name": "Jax",
+    "region": "",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jax_0.jpg"
+  },
+  {
+    "name": "Jayce",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jayce_0.jpg"
+  },
+  {
+    "name": "Jhin",
+    "region": "",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jhin_0.jpg"
+  },
+  {
+    "name": "Jinx",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jinx_0.jpg"
+  },
+  {
+    "name": "K'Sante",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/KSante_0.jpg"
+  },
+  {
+    "name": "Kaisa",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kaisa_0.jpg"
+  },
+  {
+    "name": "Kalista",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kalista_0.jpg"
+  },
+  {
+    "name": "Karma",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Karma_0.jpg"
+  },
+  {
+    "name": "Karthus",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Karthus_0.jpg"
+  },
+  {
+    "name": "Kassadin",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kassadin_0.jpg"
+  },
+  {
+    "name": "Katarina",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Katarina_0.jpg"
+  },
+  {
+    "name": "Kayle",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kayle_0.jpg"
+  },
+  {
+    "name": "Kayn",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kayn_0.jpg"
+  },
+  {
+    "name": "Kennen",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kennen_0.jpg"
+  },
+  {
+    "name": "Khazix",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Khazix_0.jpg"
+  },
+  {
+    "name": "Kindred",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kindred_0.jpg"
+  },
+  {
+    "name": "Kled",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kled_0.jpg"
+  },
+  {
+    "name": "Kog'Maw",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/KogMaw_0.jpg"
+  },
+  {
+    "name": "LeBlanc",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Leblanc_0.jpg"
+  },
+  {
+    "name": "Lee Sin",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/LeeSin_0.jpg"
+  },
+  {
+    "name": "Leona",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Leona_0.jpg"
+  },
+  {
+    "name": "Lillia",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lillia_0.jpg"
+  },
+  {
+    "name": "Lissandra",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lissandra_0.jpg"
+  },
+  {
+    "name": "Lucian",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lucian_0.jpg"
+  },
+  {
+    "name": "Lulu",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lulu_0.jpg"
+  },
+  {
+    "name": "Lux",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lux_0.jpg"
+  },
+  {
+    "name": "Malphite",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malphite_0.jpg"
+  },
+  {
+    "name": "Malzahar",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malzahar_0.jpg"
+  },
+  {
+    "name": "Maokai",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Maokai_0.jpg"
+  },
+  {
+    "name": "Master Yi",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/MasterYi_0.jpg"
+  },
+  {
+    "name": "Miss Fortune",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/MissFortune_0.jpg"
+  },
+  {
+    "name": "Mordekaiser",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Mordekaiser_0.jpg"
+  },
+  {
+    "name": "Morgana",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Morgana_0.jpg"
+  },
+  {
+    "name": "Nami",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nami_0.jpg"
+  },
+  {
+    "name": "Nasus",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nasus_0.jpg"
+  },
+  {
+    "name": "Nautilus",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nautilus_0.jpg"
+  },
+  {
+    "name": "Neeko",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Neeko_0.jpg"
+  },
+  {
+    "name": "Nidalee",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nidalee_0.jpg"
+  },
+  {
+    "name": "Nilah",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nilah_0.jpg"
+  },
+  {
+    "name": "Nocturne",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nocturne_0.jpg"
+  },
+  {
+    "name": "Nunu e Willump",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg"
+  },
+  {
+    "name": "Olaf",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Olaf_0.jpg"
+  },
+  {
+    "name": "Orianna",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Orianna_0.jpg"
+  },
+  {
+    "name": "Ornn",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ornn_0.jpg"
+  },
+  {
+    "name": "Pantheon",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Pantheon_0.jpg"
+  },
+  {
+    "name": "Poppy",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Poppy_0.jpg"
+  },
+  {
+    "name": "Pyke",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Pyke_0.jpg"
+  },
+  {
+    "name": "Qiyana",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Qiyana_0.jpg"
+  },
+  {
+    "name": "Quinn",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Quinn_0.jpg"
+  },
+  {
+    "name": "Rakan",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rakan_0.jpg"
+  },
+  {
+    "name": "Rammus",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rammus_0.jpg"
+  },
+  {
+    "name": "Rek'Sai",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/RekSai_0.jpg"
+  },
+  {
+    "name": "Rell",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rell_0.jpg"
+  },
+  {
+    "name": "Renata Glasc",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Renata_0.jpg"
+  },
+  {
+    "name": "Renekton",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Renekton_0.jpg"
+  },
+  {
+    "name": "Rengar",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rengar_0.jpg"
+  },
+  {
+    "name": "Riven",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Riven_0.jpg"
+  },
+  {
+    "name": "Rumble",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rumble_0.jpg"
+  },
+  {
+    "name": "Ryze",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ryze_0.jpg"
+  },
+  {
+    "name": "Samira",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Samira_0.jpg"
+  },
+  {
+    "name": "Sejuani",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sejuani_0.jpg"
+  },
+  {
+    "name": "Senna",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Senna_0.jpg"
+  },
+  {
+    "name": "Seraphine",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Seraphine_0.jpg"
+  },
+  {
+    "name": "Sett",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sett_0.jpg"
+  },
+  {
+    "name": "Shaco",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shaco_0.jpg"
+  },
+  {
+    "name": "Shen",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shen_0.jpg"
+  },
+  {
+    "name": "Shyvana",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shyvana_0.jpg"
+  },
+  {
+    "name": "Singed",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Singed_0.jpg"
+  },
+  {
+    "name": "Sion",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sion_0.jpg"
+  },
+  {
+    "name": "Sivir",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sivir_0.jpg"
+  },
+  {
+    "name": "Skarner",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Skarner_0.jpg"
+  },
+  {
+    "name": "Sona",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sona_0.jpg"
+  },
+  {
+    "name": "Soraka",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Soraka_0.jpg"
+  },
+  {
+    "name": "Swain",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Swain_0.jpg"
+  },
+  {
+    "name": "Sylas",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sylas_0.jpg"
+  },
+  {
+    "name": "Syndra",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Syndra_0.jpg"
+  },
+  {
+    "name": "Tahm Kench",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/TahmKench_0.jpg"
+  },
+  {
+    "name": "Taliyah",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Taliyah_0.jpg"
+  },
+  {
+    "name": "Talon",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Talon_0.jpg"
+  },
+  {
+    "name": "Taric",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Taric_0.jpg"
+  },
+  {
+    "name": "Teemo",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Teemo_0.jpg"
+  },
+  {
+    "name": "Thresh",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Thresh_0.jpg"
+  },
+  {
+    "name": "Tristana",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Tristana_0.jpg"
+  },
+  {
+    "name": "Trundle",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Trundle_0.jpg"
+  },
+  {
+    "name": "Tryndamere",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Tryndamere_0.jpg"
+  },
+  {
+    "name": "Twisted Fate",
+    "region": "Águas de Sentina",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/TwistedFate_0.jpg"
+  },
+  {
+    "name": "Twitch",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Twitch_0.jpg"
+  },
+  {
+    "name": "Udyr",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Udyr_0.jpg"
+  },
+  {
+    "name": "Urgot",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Urgot_0.jpg"
+  },
+  {
+    "name": "Varus",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Varus_0.jpg"
+  },
+  {
+    "name": "Vayne",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vayne_0.jpg"
+  },
+  {
+    "name": "Veigar",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Veigar_0.jpg"
+  },
+  {
+    "name": "Vel'Koz",
+    "region": "O Vazio",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Velkoz_0.jpg"
+  },
+  {
+    "name": "Vex",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vex_0.jpg"
+  },
+  {
+    "name": "Vi",
+    "region": "Piltover",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vi_0.jpg"
+  },
+  {
+    "name": "Viego",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Viego_0.jpg"
+  },
+  {
+    "name": "Viktor",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Viktor_0.jpg"
+  },
+  {
+    "name": "Vladimir",
+    "region": "Noxus",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vladimir_0.jpg"
+  },
+  {
+    "name": "Volibear",
+    "region": "Freljord",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Volibear_0.jpg"
+  },
+  {
+    "name": "Warwick",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Warwick_0.jpg"
+  },
+  {
+    "name": "Wukong",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/MonkeyKing_0.jpg"
+  },
+  {
+    "name": "Xayah",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Xayah_0.jpg"
+  },
+  {
+    "name": "Xerath",
+    "region": "Shurima",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Xerath_0.jpg"
+  },
+  {
+    "name": "Xin Zhao",
+    "region": "Demacia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/XinZhao_0.jpg"
+  },
+  {
+    "name": "Yasuo",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yasuo_0.jpg"
+  },
+  {
+    "name": "Yone",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yone_0.jpg"
+  },
+  {
+    "name": "Yorick",
+    "region": "Ilhas das Sombras",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yorick_0.jpg"
+  },
+  {
+    "name": "Yuumi",
+    "region": "Bandópolis",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yuumi_0.jpg"
+  },
+  {
+    "name": "Zac",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zac_0.jpg"
+  },
+  {
+    "name": "Zed",
+    "region": "Ionia",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zed_0.jpg"
+  },
+  {
+    "name": "Zeri",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zeri_0.jpg"
+  },
+  {
+    "name": "Ziggs",
+    "region": "Zaun",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ziggs_0.jpg"
+  },
+  {
+    "name": "Zilean",
+    "region": "Runeterra",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zilean_0.jpg"
+  },
+  {
+    "name": "Zoe",
+    "region": "Targon",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zoe_0.jpg"
+  },
+  {
+    "name": "Zyra",
+    "region": "Ixtal",
+    "urlImgLoading": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zyra_0.jpg"
+  }
+]
