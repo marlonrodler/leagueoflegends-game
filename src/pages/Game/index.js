@@ -372,7 +372,7 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo as cartas estarão viras e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
+                          Neste modo as cartas estarão viradas, e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
                           <br />Exemplo: "Rito Gomes".
                         </Text>
                       </PopoverBody>
@@ -435,7 +435,7 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo as cartas estarão viras e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
+                          Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
                           <br />Exemplo: "Rito".
                         </Text>
                       </PopoverBody>
@@ -498,7 +498,7 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo os campeões estarão a mostra, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
+                          Neste modo os campeões estarão à mostra, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
                           <br />Exemplo: "Rito".
                         </Text>
                       </PopoverBody>
