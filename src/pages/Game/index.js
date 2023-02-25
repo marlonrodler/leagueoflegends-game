@@ -372,8 +372,8 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo você deve colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
-                          <br />Exemplo: "Fulano Brasil".
+                          Neste modo as cartas estarão viras e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
+                          <br />Exemplo: "Rito Gomes".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
@@ -435,8 +435,8 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo você deve colocar somente o nome do campeão sem espaços e sem acentos.
-                          <br />Exemplo: "Fulano".
+                          Neste modo as cartas estarão viras e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
+                          <br />Exemplo: "Rito".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
@@ -498,8 +498,8 @@ function Game() {
                           letterSpacing='2px'
                           color={'#c4b998'}
                         >
-                          Neste modo você deve colocar somente o nome do campeão sem espaços e sem acentos.
-                          <br />Exemplo: "Fulano".
+                          Neste modo os campeões estarão a mostra, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
+                          <br />Exemplo: "Rito".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
