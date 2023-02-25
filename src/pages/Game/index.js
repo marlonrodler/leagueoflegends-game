@@ -1,7 +1,37 @@
+// Todo:
+// - [x] - Sistema para todos os acertos
+// - [x] - Sistema para fim do timer
+// - [x] - Criar componente de Modal pré-jogo
+// - [x] - Criar componente de Input (FindChampion)
+// - [x] - Criar componente de ChampionsCard
+// - [x] - Criar componente de ChampionsList - É o que vai conter os cards
+// - [x] - Criar componente de Loading
+// - [x] - Criar componente de Timer
+// - [x] - Criar TEMA personalizado do Chakra
+// - [x] - Configurar Eslint e Prettier
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import api from '../../services/api';
 
-import { Box, Wrap, WrapItem, Text, Input, Button, Spinner } from '@chakra-ui/react';
+import {
+  Box,
+  Wrap,
+  WrapItem,
+  Text,
+  Input,
+  Button,
+  Spinner,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+  Portal,
+  PopoverHeader,
+  PopoverFooter
+} from '@chakra-ui/react';
 import questionImg from '../../assets/imgs/question-invert.png';
 import './styles.css';
 
@@ -54,7 +84,23 @@ function Game() {
   const handleFindChampions = (name) => {
     const newChampions = { ...champions };
     for (const key in newChampions) {
-      if (key.toLowerCase() === name.toLowerCase() && !newChampions[key].hit) {
+      let isHit = false;
+
+      if (!newChampions[key].hit) {
+        if (difficulty !== 'tryhard') {
+          if (key.toLowerCase() === name.toLowerCase()) {
+            isHit = true;
+          }
+        } else {
+          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(' ', '');
+          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
+            isHit = true;
+          }
+        }
+      }
+
+
+      if (isHit) {
         newChampions[key].active = true;
         newChampions[key].hit = true;
         setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
@@ -71,15 +117,8 @@ function Game() {
     setTimeout(() => {
       setStartPlay(true);
 
-      if (difficulty === 'leesin'){
-        setCounter(1200);
-        getChampions(false);
-      } else if (difficulty === 'yuumi'){
-        setCounter(900);
-        getChampions(true);
-      }
+      handleSetDifficulty(difficulty);
 
-      console.log('champions:',champions);
       setNumberHits(0);
     }, 1000);
 
@@ -88,6 +127,19 @@ function Game() {
       setGameStarted(true);
       setLoading(false);
     }, 2000);
+  }
+
+  const handleSetDifficulty = (difficulty) => {
+    if (difficulty === 'yuumi') {
+      setCounter(900);
+      getChampions(true);
+    } else if (difficulty === 'leesin') {
+      setCounter(1200);
+      getChampions(false);
+    } else if (difficulty === 'tryhard') {
+      setCounter(1500);
+      getChampions(false);
+    }
   }
 
   return (
@@ -275,27 +327,197 @@ function Game() {
                 alignItems='center'
                 justifyContent='space-around'
               >
-                <Button
-                  onClick={() => handleStartGame('tryhard')}
-                  colorScheme='red'
-                  w={'90px'}
-                >
-                  Tryhard
-                </Button>
-                <Button
-                  onClick={() => handleStartGame('leesin')}
-                  colorScheme='orange'
-                  w={'90px'}
-                >
-                  Lee Sin
-                </Button>
-                <Button
-                  onClick={() => handleStartGame('yuumi')}
-                  colorScheme='green'
-                  w={'90px'}
-                >
-                  Yuumi
-                </Button>
+                
+                <Popover>
+                  <PopoverTrigger>
+                    <Button
+                      colorScheme='red'
+                      w={'90px'}
+                    >
+                      Tryhard
+                    </Button>
+                  </PopoverTrigger>
+                  <Portal>
+                    <PopoverContent
+                      border='1px solid #927345'
+                      backgroundColor={'rgba(10,10,12,.9)'}
+                    >
+                      <PopoverArrow
+                        backgroundColor={'#927345'}
+                        shadow={'-1px -1px 1px 0 #927345'}
+                      />
+                      <PopoverHeader
+                        borderBottom={'1px solid #927345'}
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          textTransform='uppercase'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Como jogar:
+                        </Text>
+                      </PopoverHeader>
+                      <PopoverCloseButton
+                        color={'#c4b998'}
+                      />
+                      <PopoverBody
+                        border='none'
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Neste modo você deve colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
+                          <br />Exemplo: "Fulano Brasil".
+                        </Text>
+                      </PopoverBody>
+                      <PopoverFooter
+                        border='none'
+                        display={'flex'}
+                        justifyContent={'end'}
+                      >
+                        <Button
+                          onClick={() => handleStartGame('tryhard')}
+                          colorScheme='red'
+                          w={'90px'}
+                        >
+                          Começar
+                        </Button>
+                      </PopoverFooter>
+                    </PopoverContent>
+                  </Portal>
+                </Popover>
+                <Popover>
+                  <PopoverTrigger>
+                    <Button
+                      colorScheme='orange'
+                      w={'90px'}
+                    >
+                      Lee Sin
+                    </Button>
+                  </PopoverTrigger>
+                  <Portal>
+                    <PopoverContent
+                      border='1px solid #927345'
+                      backgroundColor={'rgba(10,10,12,.9)'}
+                    >
+                      <PopoverArrow
+                        backgroundColor={'#927345'}
+                        shadow={'-1px -1px 1px 0 #927345'}
+                      />
+                      <PopoverHeader
+                        borderBottom={'1px solid #927345'}
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          textTransform='uppercase'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Como jogar:
+                        </Text>
+                      </PopoverHeader>
+                      <PopoverCloseButton
+                        color={'#c4b998'}
+                      />
+                      <PopoverBody
+                        border='none'
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Neste modo você deve colocar somente o nome do campeão sem espaços e sem acentos.
+                          <br />Exemplo: "Fulano".
+                        </Text>
+                      </PopoverBody>
+                      <PopoverFooter
+                        border='none'
+                        display={'flex'}
+                        justifyContent={'end'}
+                      >
+                        <Button
+                          onClick={() => handleStartGame('leesin')}
+                          colorScheme='orange'
+                          w={'90px'}
+                        >
+                          Começar
+                        </Button>
+                      </PopoverFooter>
+                    </PopoverContent>
+                  </Portal>
+                </Popover>
+                <Popover>
+                  <PopoverTrigger>
+                    <Button
+                      colorScheme='green'
+                      w={'90px'}
+                    >
+                      Yuumi
+                    </Button>
+                  </PopoverTrigger>
+                  <Portal>
+                    <PopoverContent
+                      border='1px solid #927345'
+                      backgroundColor={'rgba(10,10,12,.9)'}
+                    >
+                      <PopoverArrow
+                        backgroundColor={'#927345'}
+                        shadow={'-1px -1px 1px 0 #927345'}
+                      />
+                      <PopoverHeader
+                        borderBottom={'1px solid #927345'}
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          textTransform='uppercase'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Como jogar:
+                        </Text>
+                      </PopoverHeader>
+                      <PopoverCloseButton
+                        color={'#c4b998'}
+                      />
+                      <PopoverBody
+                        border='none'
+                      >
+                        <Text
+                          fontSize='16px'
+                          fontWeight='bold'
+                          letterSpacing='2px'
+                          color={'#c4b998'}
+                        >
+                          Neste modo você deve colocar somente o nome do campeão sem espaços e sem acentos.
+                          <br />Exemplo: "Fulano".
+                        </Text>
+                      </PopoverBody>
+                      <PopoverFooter
+                        border='none'
+                        display={'flex'}
+                        justifyContent={'end'}
+                      >
+                        <Button
+                          onClick={() => handleStartGame('yuumi')}
+                          colorScheme='green'
+                          w={'90px'}
+                        >
+                          Começar
+                        </Button>
+                      </PopoverFooter>
+                    </PopoverContent>
+                  </Portal>
+                </Popover>
+
               </Box>
             </Box>
           </Box>
