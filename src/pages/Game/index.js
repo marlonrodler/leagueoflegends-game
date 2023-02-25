@@ -93,7 +93,7 @@ function Game() {
             isHit = true;
           }
         } else {
-          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(' ', '');
+          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
           if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
             isHit = true;
           }
@@ -373,7 +373,7 @@ function Game() {
                           color={'#c4b998'}
                         >
                           Neste modo as cartas estarão viradas, e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região.
-                          <br />Exemplo: "Rito Gomes".
+                          <br />Exemplo: "RITOGOMES BRASIL".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
@@ -436,7 +436,7 @@ function Game() {
                           color={'#c4b998'}
                         >
                           Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
-                          <br />Exemplo: "Rito".
+                          <br />Exemplo: "RITOGOMES".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
@@ -499,7 +499,7 @@ function Game() {
                           color={'#c4b998'}
                         >
                           Neste modo os campeões estarão à mostra, e você deverá colocar somente o nome do campeão sem espaços e sem acentos.
-                          <br />Exemplo: "Rito".
+                          <br />Exemplo: "RITOGOMES".
                         </Text>
                       </PopoverBody>
                       <PopoverFooter
