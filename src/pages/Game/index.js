@@ -1,6 +1,7 @@
 // Todo:
 // - [x] - Sistema para todos os acertos
 // - [x] - Sistema para fim do timer
+// - [x] - Guardar o "Como jogar" no localStorage
 // - [x] - Criar componente de Modal pré-jogo
 // - [x] - Criar componente de Input (FindChampion)
 // - [x] - Criar componente de ChampionsCard
