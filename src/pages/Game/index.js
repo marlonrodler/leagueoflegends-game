@@ -8,7 +8,7 @@
 // - [x] - Criar componente de Loading
 // - [x] - Criar componente de Timer
 // - [x] - Criar TEMA personalizado do Chakra
-// - [x] - Configurar Eslint e Prettier
+// - [x] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
 
 
 import React, { useState, useEffect, useRef } from 'react';
