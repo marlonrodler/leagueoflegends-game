@@ -147,7 +147,7 @@ function Game() {
     <Wrap
       w={'100%'}
       pt={['16px', '50px']}
-      pb={['160px']}
+      pb={['170px']}
       paddingX={['4px', '20px']}
       justify='center'
       spacing={['16px', '24px']}
