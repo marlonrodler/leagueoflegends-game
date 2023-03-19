@@ -1,38 +1,24 @@
-name: Deploy GitHub Pages
+name: deploy
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          persist-credentials: false
-
-      - uses: actions/cache@v2.1.4
-        id: node-modules
+          node-version: '14.x'
+      - name: Build web-app
+        run: |
+          npm ci
+          npm run build
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: node_modules/
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
-
-      - name: Install Deps
-        if: steps.node-modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-
-      - name: Build Template
-        run: yarn run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   /* 注意：这行是新加的 */
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
