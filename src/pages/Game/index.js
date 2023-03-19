@@ -46,6 +46,7 @@ function Game() {
   const [difficulty, setDifficulty] = useState('');
   const [showMessageLose, setShowMessageLose] = useState(false);
   const [showMessageWin, setShowMessageWin] = useState(false);
+  const [maxChampions, setMaxChampions] = useState(0);
   const [messageLose] = useState({
     title: 'Fora de Micão hein posição!',
     description: ''
@@ -57,11 +58,6 @@ function Game() {
 
   const refChamp = useRef(null);
   const refInputChamp = useRef(null);
-
-  useEffect(() => {
-    if (!Object.keys(champions).length)
-      getChampions(true);
-  }, [champions]);
 
   const handleFindChampions = useCallback((name) => {
     const newChampions = { ...champions };
@@ -93,29 +89,36 @@ function Game() {
   }, [champions, difficulty, numberHits]);
 
   useEffect(() => {
+    if(maxChampions === 0){
+      getChampions(true);
+    }
+
     if (startPlay) {
       refInputChamp.current.focus();
+      if (refInputChamp.current.value !== ''){
+        handleFindChampions(refInputChamp.current.value);
+      }
+
       const timer = counter > 0 && setInterval(() => {
         setCounter(counter - 1)
 
         const minutes = Math.floor((counter - 1) / 60);
         const seconds = (counter - 1) - minutes * 60;
 
-        handleFindChampions(refInputChamp.current.value);
         setTimer(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
       }, 1000);
 
       if (counter === 0) {
-        messageLose.description = `Você acertou ${numberHits} de ${Object.keys(champions).length} campeões.`;
+        messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
         setShowMessageLose(true);
       }
-      else if (numberHits === Object.keys(champions).length) {
+      else if (numberHits === maxChampions) {
         setShowMessageWin(true);
       }
 
       return () => clearInterval(timer);
     }
-  }, [counter, handleFindChampions, startPlay, champions, numberHits, messageLose]);
+  }, [counter, handleFindChampions, startPlay, maxChampions, numberHits, messageLose]);
 
   const getChampions = async (isActive) => {
     try {
@@ -125,6 +128,7 @@ function Game() {
         newResponse[key] = { ...response.data[key], active: isActive, hit: false };
       }
       setChampions(newResponse);
+      setMaxChampions(Object.keys(newResponse).length);
     } catch (error) {
       console.log('error:', error);
     }
