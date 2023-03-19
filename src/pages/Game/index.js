@@ -12,7 +12,7 @@
 // - [] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
 
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import api from '../../services/api';
 
 import {
@@ -63,16 +63,45 @@ function Game() {
       getChampions(true);
   }, [champions]);
 
+  const handleFindChampions = useCallback((name) => {
+    const newChampions = { ...champions };
+    for (const key in newChampions) {
+      let isHit = false;
+
+      if (!newChampions[key].hit) {
+        if (difficulty !== 'tryhard') {
+          if (key.toLowerCase() === refInputChamp.current.value.toLowerCase()) {
+            isHit = true;
+          }
+        } else {
+          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
+          if ((refInputChamp.current.value.toLowerCase()).indexOf(region) !== -1 && (refInputChamp.current.value.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
+            isHit = true;
+          }
+        }
+      }
+
+      if (isHit) {
+        newChampions[key].active = true;
+        newChampions[key].hit = true;
+        setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
+        refInputChamp.current.value = '';
+        setNumberHits(numberHits + 1);
+      }
+    }
+    setChampions(newChampions);
+  }, [champions, difficulty, numberHits]);
+
   useEffect(() => {
     if (startPlay) {
       refInputChamp.current.focus();
-
       const timer = counter > 0 && setInterval(() => {
         setCounter(counter - 1)
 
         const minutes = Math.floor((counter - 1) / 60);
         const seconds = (counter - 1) - minutes * 60;
 
+        handleFindChampions(refInputChamp.current.value);
         setTimer(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
       }, 1000);
 
@@ -86,7 +115,7 @@ function Game() {
 
       return () => clearInterval(timer);
     }
-  }, [counter, startPlay, champions, numberHits, messageLose]);
+  }, [counter, handleFindChampions, startPlay, champions, numberHits, messageLose]);
 
   const getChampions = async (isActive) => {
     try {
@@ -99,36 +128,6 @@ function Game() {
     } catch (error) {
       console.log('error:', error);
     }
-  }
-
-  const handleFindChampions = (name) => {
-    const newChampions = { ...champions };
-    for (const key in newChampions) {
-      let isHit = false;
-
-      if (!newChampions[key].hit) {
-        if (difficulty !== 'tryhard') {
-          if (key.toLowerCase() === name.toLowerCase()) {
-            isHit = true;
-          }
-        } else {
-          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
-          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
-            isHit = true;
-          }
-        }
-      }
-
-
-      if (isHit) {
-        newChampions[key].active = true;
-        newChampions[key].hit = true;
-        setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
-        refInputChamp.current.value = '';
-        setNumberHits(numberHits + 1);
-      }
-    }
-    setChampions(newChampions);
   }
 
   const handleStartGame = (diff) => {
@@ -260,7 +259,7 @@ function Game() {
                 placeholder='Encontre um campeão'
                 color={'#c4b998'}
                 _placeholder={{ opacity: 1, color: 'rgb(147, 115, 65, 0.6)' }}
-                onChange={(e) => handleFindChampions(e.target.value)}
+                // onChange={(e) => setInputValue(e.target.value)}
                 disabled={!loading && startPlay ? false : true}
               />
             </Box>
@@ -605,6 +604,7 @@ function Game() {
           </Box>
         )
       }
+
     </Wrap>
   )
 }
