@@ -11,7 +11,6 @@
 // - [] - Criar TEMA personalizado do Chakra
 // - [] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
 
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import api from '../../services/api';
 
@@ -66,13 +65,16 @@ function Game() {
 
       if (!newChampions[key].hit) {
         if (difficulty !== 'tryhard') {
-          if (key.toLowerCase() === refInputChamp.current.value.toLowerCase()) {
+          if (key.toLowerCase() === name.toLowerCase()) {
             isHit = true;
           }
         } else {
           const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
-          if ((refInputChamp.current.value.toLowerCase()).indexOf(region) !== -1 && (refInputChamp.current.value.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
+          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
             isHit = true;
+          } else {
+            setChampions(newChampions);
+            return;
           }
         }
       }
@@ -83,9 +85,10 @@ function Game() {
         setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
         refInputChamp.current.value = '';
         setNumberHits(numberHits + 1);
+        setChampions(newChampions);
+        return;
       }
     }
-    setChampions(newChampions);
   }, [champions, difficulty, numberHits]);
 
   useEffect(() => {
@@ -95,9 +98,6 @@ function Game() {
 
     if (startPlay) {
       refInputChamp.current.focus();
-      if (refInputChamp.current.value !== ''){
-        handleFindChampions(refInputChamp.current.value);
-      }
 
       const timer = counter > 0 && setInterval(() => {
         setCounter(counter - 1)
@@ -263,7 +263,7 @@ function Game() {
                 placeholder='Encontre um campeão'
                 color={'#c4b998'}
                 _placeholder={{ opacity: 1, color: 'rgb(147, 115, 65, 0.6)' }}
-                // onChange={(e) => setInputValue(e.target.value)}
+                onChange={(e) => handleFindChampions(e.target.value)}
                 disabled={!loading && startPlay ? false : true}
               />
             </Box>
