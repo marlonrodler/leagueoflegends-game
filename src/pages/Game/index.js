@@ -72,9 +72,6 @@ function Game() {
           const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
           if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
             isHit = true;
-          } else {
-            setChampions(newChampions);
-            return;
           }
         }
       }
