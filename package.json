@@ -1,6 +1,7 @@
 {
   "name": "lol-game",
   "version": "0.1.0",
+  "homepage": "https://marlonrodler.github.io/leagueoflegends-game",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
