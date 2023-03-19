@@ -1,15 +1,15 @@
 // Todo:
 // - [x] - Sistema para todos os acertos
 // - [x] - Sistema para fim do timer
-// - [x] - Guardar o "Como jogar" no localStorage
-// - [x] - Criar componente de Modal pré-jogo
-// - [x] - Criar componente de Input (FindChampion)
-// - [x] - Criar componente de ChampionsCard
-// - [x] - Criar componente de ChampionsList - É o que vai conter os cards
-// - [x] - Criar componente de Loading
-// - [x] - Criar componente de Timer
-// - [x] - Criar TEMA personalizado do Chakra
-// - [x] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
+// - [] - Guardar o "Como jogar" no localStorage
+// - [] - Criar componente de Modal pré-jogo
+// - [] - Criar componente de Input (FindChampion)
+// - [] - Criar componente de ChampionsCard
+// - [] - Criar componente de ChampionsList - É o que vai conter os cards
+// - [] - Criar componente de Loading
+// - [] - Criar componente de Timer
+// - [] - Criar TEMA personalizado do Chakra
+// - [] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
 
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -41,10 +41,19 @@ function Game() {
   const [counter, setCounter] = useState(0);
   const [numberHits, setNumberHits] = useState(0);
   const [startPlay, setStartPlay] = useState(false);
-  const [gameStarted, setGameStarted] = useState(false);
   const [timer, setTimer] = useState('');
   const [loading, setLoading] = useState(false);
   const [difficulty, setDifficulty] = useState('');
+  const [showMessageLose, setShowMessageLose] = useState(false);
+  const [showMessageWin, setShowMessageWin] = useState(false);
+  const [messageLose] = useState({
+    title: 'Fora de Micão hein posição!',
+    description: ''
+  });
+  const [messageWin] = useState({
+    title: 'Parabéns!',
+    description: 'Você acertou todos os campeões.'
+  });
 
   const refChamp = useRef(null);
   const refInputChamp = useRef(null);
@@ -56,6 +65,8 @@ function Game() {
 
   useEffect(() => {
     if (startPlay) {
+      refInputChamp.current.focus();
+
       const timer = counter > 0 && setInterval(() => {
         setCounter(counter - 1)
 
@@ -65,9 +76,17 @@ function Game() {
         setTimer(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
       }, 1000);
 
+      if (counter === 0) {
+        messageLose.description = `Você acertou ${numberHits} de ${Object.keys(champions).length} campeões.`;
+        setShowMessageLose(true);
+      }
+      else if (numberHits === Object.keys(champions).length) {
+        setShowMessageWin(true);
+      }
+
       return () => clearInterval(timer);
     }
-  }, [counter, startPlay]);
+  }, [counter, startPlay, champions, numberHits, messageLose]);
 
   const getChampions = async (isActive) => {
     try {
@@ -112,22 +131,16 @@ function Game() {
     setChampions(newChampions);
   }
 
-  const handleStartGame = (difficulty) => {
+  const handleStartGame = (diff) => {
     setLoading(true);
-    setDifficulty(difficulty);
-    setTimeout(() => {
-      setStartPlay(true);
-
-      handleSetDifficulty(difficulty);
-
-      setNumberHits(0);
-    }, 1000);
+    setDifficulty(diff);
+    handleSetDifficulty(diff);
+    setNumberHits(0);
+    setStartPlay(true);
 
     setTimeout(() => {
-      refInputChamp.current.focus();
-      setGameStarted(true);
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }
 
   const handleSetDifficulty = (difficulty) => {
@@ -141,6 +154,12 @@ function Game() {
       setCounter(1500);
       getChampions(false);
     }
+  }
+
+  const handleRestartGame = () => {
+    setShowMessageLose(false);
+    setShowMessageWin(false);
+    setStartPlay(false);
   }
 
   return (
@@ -202,25 +221,24 @@ function Game() {
         })
       }
 
-      <Box
-        display={startPlay ? 'flex' : 'none'}
-        flexDirection='column'
-        alignItems='center'
-        justifyContent='center'
-        w='340px'
-        bottom={0}
-        position={'fixed'}
-        paddingX='16px'
-        pb='16px'
-        backgroundColor={'#0A0A0B'}
-        borderRadius='lg'
-        border='1px solid #927345'
-      >
-        {
-          gameStarted &&
-          (
+      {
+        startPlay && (
+          <Box
+            display={!loading && !showMessageLose && !showMessageWin ? 'flex' : 'none'}
+            flexDirection='column'
+            alignItems='center'
+            justifyContent='center'
+            w='340px'
+            bottom={0}
+            position={'fixed'}
+            paddingX='16px'
+            pb='16px'
+            backgroundColor={'#0A0A0B'}
+            borderRadius='lg'
+            border='1px solid #927345'
+          >
             <Box
-              display='flex'
+              display={'flex'}
               justifyContent='space-around'
               alignItems='center'
               w='100%'
@@ -231,23 +249,24 @@ function Game() {
               <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{numberHits} / {Object.keys(champions).length}</Text>
               <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{timer}</Text>
             </Box>
-          )
-        }
-        <Box
-          w='100%'
-          paddingY={'16px'}
-        >
-          <Input
-            ref={refInputChamp}
-            autoFocus
-            textTransform={'uppercase'}
-            placeholder='Encontre um campeão'
-            color={'#c4b998'}
-            _placeholder={{ opacity: 1, color: 'rgb(147, 115, 65, 0.6)' }}
-            onChange={(e) => handleFindChampions(e.target.value)}
-          />
-        </Box>
-      </Box>
+            <Box
+              w='100%'
+              paddingY={'16px'}
+            >
+              <Input
+                ref={refInputChamp}
+                autoFocus
+                textTransform={'uppercase'}
+                placeholder='Encontre um campeão'
+                color={'#c4b998'}
+                _placeholder={{ opacity: 1, color: 'rgb(147, 115, 65, 0.6)' }}
+                onChange={(e) => handleFindChampions(e.target.value)}
+                disabled={!loading && startPlay ? false : true}
+              />
+            </Box>
+          </Box>
+        )
+      }
 
       {
         loading &&
@@ -323,12 +342,13 @@ function Game() {
               <Box
                 paddingX='24px'
                 pb='24px'
+                pt='16px'
                 w={'100%'}
                 display='flex'
                 alignItems='center'
                 justifyContent='space-around'
               >
-                
+
                 <Popover>
                   <PopoverTrigger>
                     <Button
@@ -519,6 +539,67 @@ function Game() {
                   </Portal>
                 </Popover>
 
+              </Box>
+            </Box>
+          </Box>
+        )
+      }
+
+      {
+        (showMessageLose || showMessageWin) &&
+        (
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems='center'
+            justifyContent='center'
+            top={'-12px'}
+            w='100vw'
+            h='100vh'
+            position={'fixed'}
+            backgroundColor={'rgba(10,10,12,.6)'}
+          >
+            <Box
+              maxW={'400px'}
+              m='16px'
+              backgroundColor={'rgba(10,10,12,.9)'}
+              position={'fixed'}
+              borderRadius='lg'
+              border='1px solid #927345'
+              display='flex'
+              flexDirection='column'
+              alignItems='center'
+              justifyContent='center'
+            >
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                flexDirection='column'
+                p='16px'
+              >
+                <Box>
+                  <Text p={'8px'} textAlign={'center'} color='#c4b998' fontSize='18px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>
+                    {
+                      showMessageLose ? messageLose.title : messageWin.title
+                    }
+                  </Text>
+                  <Text p={'8px'} textAlign={'center'} color='#c4b998' fontSize='16px' fontWeight='bold' letterSpacing='2px'>
+                    {
+                      showMessageLose ? messageLose.description : messageWin.description
+                    }
+                  </Text>
+                </Box>
+                <Box
+                  pt={'16px'}
+                >
+                  <Button
+                    onClick={() => handleRestartGame()}
+                    colorScheme='yellow'
+                  >
+                    JOGAR NOVAMENTE
+                  </Button>
+                </Box>
               </Box>
             </Box>
           </Box>
