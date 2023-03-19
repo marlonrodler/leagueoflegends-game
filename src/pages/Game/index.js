@@ -605,7 +605,6 @@ function Game() {
           </Box>
         )
       }
-
     </Wrap>
   )
 }
