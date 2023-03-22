@@ -11,7 +11,7 @@
 // - [] - Criar TEMA personalizado do Chakra
 // - [] - Configurar Eslint e Prettier - https://www.youtube.com/watch?v=snN-i09yVXY
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import api from '../../services/api';
 
 import {
@@ -58,7 +58,7 @@ function Game() {
   const refChamp = useRef(null);
   const refInputChamp = useRef(null);
 
-  const handleFindChampions = useCallback((name) => {
+  const handleFindChampions = (name) => {
     const newChampions = { ...champions };
     for (const key in newChampions) {
       let isHit = false;
@@ -86,7 +86,7 @@ function Game() {
         return;
       }
     }
-  }, [champions, difficulty, numberHits]);
+  }
 
   useEffect(() => {
     if(maxChampions === 0){
@@ -115,7 +115,7 @@ function Game() {
 
       return () => clearInterval(timer);
     }
-  }, [counter, handleFindChampions, startPlay, maxChampions, numberHits, messageLose]);
+  }, [counter, startPlay, maxChampions, numberHits, messageLose]);
 
   const getChampions = async (isActive) => {
     try {
@@ -246,7 +246,7 @@ function Game() {
               paddingX={'8px'}
               pt={'16px'}
             >
-              <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{numberHits} / {Object.keys(champions).length}</Text>
+              <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{numberHits} / {maxChampions}</Text>
               <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{timer}</Text>
             </Box>
             <Box
