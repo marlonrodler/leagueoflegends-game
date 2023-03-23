@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/leagueoflegends-game/static/css/main.b373479a.css",
-    "main.js": "/leagueoflegends-game/static/js/main.db02b5b8.js",
+    "main.js": "/leagueoflegends-game/static/js/main.f924e3f9.js",
     "static/js/787.67505372.chunk.js": "/leagueoflegends-game/static/js/787.67505372.chunk.js",
     "static/media/question-invert.png": "/leagueoflegends-game/static/media/question-invert.15f99a65b3e783864c84.png",
     "index.html": "/leagueoflegends-game/index.html",
     "main.b373479a.css.map": "/leagueoflegends-game/static/css/main.b373479a.css.map",
-    "main.db02b5b8.js.map": "/leagueoflegends-game/static/js/main.db02b5b8.js.map",
+    "main.f924e3f9.js.map": "/leagueoflegends-game/static/js/main.f924e3f9.js.map",
     "787.67505372.chunk.js.map": "/leagueoflegends-game/static/js/787.67505372.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b373479a.css",
-    "static/js/main.db02b5b8.js"
+    "static/js/main.f924e3f9.js"
   ]
 }
