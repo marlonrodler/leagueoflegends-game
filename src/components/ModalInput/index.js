@@ -4,7 +4,7 @@ import InputFind from "../InputFind";
 import TextMaxChamp from "../TextMaxChamp";
 import TextTimer from "../TextTimer";
 
-function InputBox({ handleFindChampions, numberHits, maxChampions, timer, inputChampValue }) {
+function InputBox({ numberHits, maxChampions, counter, setCounter, setTimer, timer, champions, setChampions, setNumberHits, refChamp, difficulty }) {
   
   return (
     <Box
@@ -30,14 +30,14 @@ function InputBox({ handleFindChampions, numberHits, maxChampions, timer, inputC
         paddingX={'8px'}
         pt={'16px'}
       >
-        <TextTimer timer={timer} />
+        <TextTimer counter={counter} setCounter={setCounter} setTimer={setTimer} timer={timer} />
         <TextMaxChamp maxChampions={maxChampions} numberHits={numberHits} />
       </Box>
       <Box
         w='100%'
         paddingY={'16px'}
       >
-        <InputFind handleFindChampions={handleFindChampions} inputChampValue={inputChampValue} />
+        <InputFind champions={champions} setChampions={setChampions} numberHits={numberHits} setNumberHits={setNumberHits} refChamp={refChamp} difficulty={difficulty} />
       </Box>
     </Box>
   )
