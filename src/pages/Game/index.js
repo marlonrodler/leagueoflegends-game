@@ -54,12 +54,6 @@ function Game() {
     }
   }
 
-  const handleRestartGame = () => {
-    setShowMessageLose(false);
-    setShowMessageWin(false);
-    setStartPlay(false);
-  }
-
   return (
     <Wrap
       w={'100%'}
@@ -119,7 +113,7 @@ function Game() {
         (showMessageLose || showMessageWin) &&
         (
           <ModalMessage
-            handleRestartGame={handleRestartGame}
+            setStartPlay={setStartPlay}
             showMessageLose={showMessageLose}
             messageLose={messageLose}
             messageWin={messageWin}

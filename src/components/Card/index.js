@@ -6,6 +6,7 @@ function Card({ active, urlImgLoading, hit, difficulty, name, region, apiName, r
   return (
     <WrapItem
       ref={(champ) => { refChamp[apiName] = champ }}
+      margin='0'
       transition='all 0.5s ease'
       _hover={{ transform: ['', 'scale(1.1)'] }}
     >
@@ -19,6 +20,7 @@ function Card({ active, urlImgLoading, hit, difficulty, name, region, apiName, r
         flexDirection='column-reverse'
         w={['140px', '200px']}
         h={['392px', '452px']}
+        margin='8px'
         borderRadius='lg'
         overflow='hidden'
         border={active ? '' : '1px solid #927345'}
