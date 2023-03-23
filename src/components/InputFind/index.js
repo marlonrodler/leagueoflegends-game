@@ -18,7 +18,7 @@ function InputFind({ champions, setChampions, numberHits, setNumberHits, refCham
           }
         } else {
           const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
-          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
+          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase() + ' ') !== -1) {
             isHit = true;
           }
         }
