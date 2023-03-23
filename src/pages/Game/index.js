@@ -21,7 +21,6 @@ function Game() {
   const [timer, setTimer] = useState('');
   const [loading, setLoading] = useState(false);
   const [difficulty, setDifficulty] = useState('');
-  const [inputChampValue, setInputChampValue] = useState('');
   const [showMessageLose, setShowMessageLose] = useState(false);
   const [showMessageWin, setShowMessageWin] = useState(false);
   const [maxChampions, setMaxChampions] = useState(0);
@@ -36,51 +35,12 @@ function Game() {
 
   const refChamp = useRef(null);
 
-  const handleFindChampions = (name) => {
-    setInputChampValue(name);
-    const newChampions = { ...champions };
-    for (const key in newChampions) {
-      let isHit = false;
-
-      if (!newChampions[key].hit) {
-        if (difficulty !== 'tryhard') {
-          if (key.toLowerCase() === name.toLowerCase()) {
-            isHit = true;
-          }
-        } else {
-          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
-          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase()) !== -1) {
-            isHit = true;
-          }
-        }
-      }
-
-      if (isHit) {
-        newChampions[key].active = true;
-        newChampions[key].hit = true;
-        setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
-        setInputChampValue('');
-        setNumberHits(numberHits + 1);
-        setChampions(newChampions);
-        return;
-      }
-    }
-  }
-
   useEffect(() => {
     if (maxChampions === 0) {
       getChampions(true);
     }
 
     if (startPlay) {
-      const timer = counter > 0 && setInterval(() => {
-        setCounter(counter - 1)
-
-        const minutes = Math.floor((counter - 1) / 60);
-        const seconds = (counter - 1) - minutes * 60;
-
-        setTimer(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
-      }, 1000);
 
       if (counter === 0) {
         messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
@@ -90,7 +50,6 @@ function Game() {
         setShowMessageWin(true);
       }
 
-      return () => clearInterval(timer);
     }
   }, [counter, startPlay, maxChampions, numberHits, messageLose]);
 
@@ -105,31 +64,6 @@ function Game() {
       setMaxChampions(Object.keys(newResponse).length);
     } catch (error) {
       console.log('error:', error);
-    }
-  }
-
-  const handleStartGame = (diff) => {
-    setLoading(true);
-    setDifficulty(diff);
-    handleSetDifficulty(diff);
-    setNumberHits(0);
-    setStartPlay(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }
-
-  const handleSetDifficulty = (difficulty) => {
-    if (difficulty === 'yuumi') {
-      setCounter(900);
-      getChampions(true);
-    } else if (difficulty === 'leesin') {
-      setCounter(1200);
-      getChampions(false);
-    } else if (difficulty === 'tryhard') {
-      setCounter(1500);
-      getChampions(false);
     }
   }
 
@@ -158,11 +92,17 @@ function Game() {
       {
         startPlay && (
           <ModalInput
-            handleFindChampions={handleFindChampions}
-            numberHits={numberHits}
-            maxChampions={maxChampions}
-            timer={timer}
-            inputChampValue={inputChampValue}
+            numberHits={numberHits} 
+            maxChampions={maxChampions} 
+            counter={counter} 
+            setCounter={setCounter} 
+            setTimer={setTimer} 
+            timer={timer} 
+            champions={champions} 
+            setChampions={setChampions} 
+            setNumberHits={setNumberHits} 
+            refChamp={refChamp} 
+            difficulty={difficulty}
           />
         )
       }
@@ -178,7 +118,12 @@ function Game() {
         !startPlay &&
         (
           <ModalPlay
-            handleStartGame={handleStartGame}
+            setDifficulty={setDifficulty}
+            setCounter={setCounter}
+            getChampions={getChampions}
+            setNumberHits={setNumberHits}
+            setStartPlay={setStartPlay}
+            setLoading={setLoading}
           />
         )
       }

@@ -1,7 +1,21 @@
+import React, {useEffect} from "react";
 import { Text } from "@chakra-ui/react";
-import React from "react";
 
-function TextTimer({timer}) {
+function TextTimer({counter, setCounter, setTimer, timer}) {
+
+  useEffect(() => {
+
+    const constructTimer = counter > 0 && setInterval(() => {
+      setCounter(counter - 1)
+
+      const minutes = Math.floor((counter - 1) / 60);
+      const seconds = (counter - 1) - minutes * 60;
+
+      setTimer(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+    }, 1000);
+
+      return () => clearInterval(constructTimer);
+    }, [setCounter, setTimer, counter]);
 
   return(
     <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{timer}</Text>

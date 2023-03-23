@@ -2,7 +2,32 @@ import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 import PopoverMode from "../PopoverMode";
 
-function ModalPlay({handleStartGame}) {
+function ModalPlay({ setDifficulty, setCounter, getChampions, setNumberHits, setStartPlay, setLoading }) {
+
+  const handleStartGame = (diff) => {
+    setLoading(true);
+    setDifficulty(diff);
+    handleSetDifficulty(diff);
+    setNumberHits(0);
+    setStartPlay(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }
+
+  const handleSetDifficulty = (difficulty) => {
+    if (difficulty === 'yuumi') {
+      setCounter(900);
+      getChampions(true);
+    } else if (difficulty === 'leesin') {
+      setCounter(1200);
+      getChampions(false);
+    } else if (difficulty === 'tryhard') {
+      setCounter(1500);
+      getChampions(false);
+    }
+  }
 
   return (
     <Box
@@ -64,7 +89,7 @@ function ModalPlay({handleStartGame}) {
             textHelp="Neste modo as cartas estarão viradas, e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região."
             textExample='Exemplo: "RITOGOMES BRASIL".'
           />
-          
+
           <PopoverMode
             handleStartGame={handleStartGame}
             mode="leesin"
@@ -73,7 +98,7 @@ function ModalPlay({handleStartGame}) {
             textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão sem espaços e sem acentos."
             textExample='Exemplo: "RITOGOMES".'
           />
-          
+
           <PopoverMode
             handleStartGame={handleStartGame}
             mode="yuumi"
