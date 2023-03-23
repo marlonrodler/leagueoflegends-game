@@ -8,7 +8,6 @@ import api from '../../services/api';
 import { Wrap } from '@chakra-ui/react';
 import CardList from '../../components/CardList';
 import ModalInput from '../../components/ModalInput';
-import './styles.css';
 import SpinnerLoading from '../../components/SpinnerLoading';
 import ModalPlay from '../../components/ModalPlay';
 import ModalMessage from '../../components/ModalMessage';
@@ -41,7 +40,6 @@ function Game() {
     }
 
     if (startPlay) {
-
       if (counter === 0) {
         messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
         setShowMessageLose(true);
@@ -49,7 +47,6 @@ function Game() {
       else if (numberHits === maxChampions) {
         setShowMessageWin(true);
       }
-
     }
   }, [counter, startPlay, maxChampions, numberHits, messageLose]);
 
