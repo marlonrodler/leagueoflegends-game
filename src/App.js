@@ -4,6 +4,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import './App.css';
 
+import './fonts/BeaufortforLOLJa-Regular.ttf'
+
+
 import Game from './pages/Game'
 
 function App() {
