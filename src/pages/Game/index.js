@@ -38,17 +38,7 @@ function Game() {
     if (maxChampions === 0) {
       getChampions(true);
     }
-
-    if (startPlay) {
-      if (counter === 0) {
-        messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
-        setShowMessageLose(true);
-      }
-      else if (numberHits === maxChampions) {
-        setShowMessageWin(true);
-      }
-    }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose]);
+  }, [maxChampions]);
 
   const getChampions = async (isActive) => {
     try {
@@ -133,7 +123,12 @@ function Game() {
             showMessageLose={showMessageLose}
             messageLose={messageLose}
             messageWin={messageWin}
-
+            startPlay={startPlay}
+            counter={counter}
+            numberHits={numberHits}
+            maxChampions={maxChampions}
+            setShowMessageLose={setShowMessageLose}
+            setShowMessageWin={setShowMessageWin}
           />
         )
       }
