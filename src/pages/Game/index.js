@@ -1,9 +1,5 @@
 // Todo:
-// - [x] - Sistema para todos os acertos
-// - [x] - Sistema para fim do timer
 // - [] - Guardar o "Como jogar" no localStorage
-// - [] - Criar componente de Modal pré-jogo
-// - [] - Criar componente de SpinnerLoading
 // - [] - Criar TEMA personalizado do Chakra
 
 import React, { useState, useEffect, useRef } from 'react';
