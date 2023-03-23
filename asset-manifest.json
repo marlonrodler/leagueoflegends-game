@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/leagueoflegends-game/static/css/main.25bc6c07.css",
-    "main.js": "/leagueoflegends-game/static/js/main.2a43a15b.js",
+    "main.js": "/leagueoflegends-game/static/js/main.c6a65acb.js",
     "static/js/787.67505372.chunk.js": "/leagueoflegends-game/static/js/787.67505372.chunk.js",
     "static/media/BeaufortforLOLJa-Regular.ttf": "/leagueoflegends-game/static/media/BeaufortforLOLJa-Regular.06d0cfb3bd89bf1f2df1.ttf",
     "static/media/question-invert.png": "/leagueoflegends-game/static/media/question-invert.15f99a65b3e783864c84.png",
     "index.html": "/leagueoflegends-game/index.html",
     "main.25bc6c07.css.map": "/leagueoflegends-game/static/css/main.25bc6c07.css.map",
-    "main.2a43a15b.js.map": "/leagueoflegends-game/static/js/main.2a43a15b.js.map",
+    "main.c6a65acb.js.map": "/leagueoflegends-game/static/js/main.c6a65acb.js.map",
     "787.67505372.chunk.js.map": "/leagueoflegends-game/static/js/787.67505372.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25bc6c07.css",
-    "static/js/main.2a43a15b.js"
+    "static/js/main.c6a65acb.js"
   ]
 }
