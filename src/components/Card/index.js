@@ -4,7 +4,11 @@ import questionImg from '../../assets/imgs/question-invert.png';
 
 function Card({ active, urlImgLoading, hit, difficulty, name, region, apiName, refChamp }) {
   return (
-    <WrapItem ref={(champ) => { refChamp[apiName] = champ }} transition='all 0.5s ease' _hover={{ transform: ['', 'scale(1.1)'] }}>
+    <WrapItem
+      ref={(champ) => { refChamp[apiName] = champ }}
+      transition='all 0.5s ease'
+      _hover={{ transform: ['', 'scale(1.1)'] }}
+    >
       <Box
         backgroundPosition='center'
         backgroundImage={active ? urlImgLoading : questionImg}
@@ -13,8 +17,8 @@ function Card({ active, urlImgLoading, hit, difficulty, name, region, apiName, r
         backgroundSize={active ? 'cover' : '200px'}
         display='flex'
         flexDirection='column-reverse'
-        w={['306px', '200px']}
-        h={['558px', '452px']}
+        w={['140px', '200px']}
+        h={['392px', '452px']}
         borderRadius='lg'
         overflow='hidden'
         border={active ? '' : '1px solid #927345'}
