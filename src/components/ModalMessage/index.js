@@ -5,7 +5,7 @@ function ModalMessage({
   handleRestartGame,
   showMessageLose,
   messageLose,
-  messageWin
+  messageWin,
 }) {
 
   return (

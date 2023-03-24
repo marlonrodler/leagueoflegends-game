@@ -18,6 +18,7 @@ function Game() {
   const [numberHits, setNumberHits] = useState(0);
   const [startPlay, setStartPlay] = useState(false);
   const [timer, setTimer] = useState('');
+  const [timerFinal, setTimerFinal] = useState('');
   const [loading, setLoading] = useState(false);
   const [difficulty, setDifficulty] = useState('');
   const [showMessageLose, setShowMessageLose] = useState(false);
@@ -45,11 +46,13 @@ function Game() {
         setShowMessageLose(true);
       }
       else if (numberHits === maxChampions) {
-        messageWin.description = `Você acertou todos os campeões em um tempo de ${timer}.`;
+        messageWin.description = `Você acertou todos os campeões em um tempo de ${timerFinal}.`;
+        setTimerFinal(timer);
         setShowMessageWin(true);
+        setStartPlay(false);
       }
     }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer]);
+  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer, setTimer, timerFinal, setTimerFinal]);
 
 
   const handleRestartGame = () => {
@@ -102,6 +105,7 @@ function Game() {
             setNumberHits={setNumberHits} 
             refChamp={refChamp} 
             difficulty={difficulty}
+            timerFinal={timerFinal}
           />
         )
       }
