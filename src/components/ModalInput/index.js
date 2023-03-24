@@ -30,7 +30,7 @@ function InputBox({ numberHits, maxChampions, counter, setCounter, setTimer, tim
         paddingX={'8px'}
         pt={'16px'}
       >
-        <TextTimer counter={counter} setCounter={setCounter} setTimer={setTimer} timer={timer} />
+        <TextTimer counter={counter} setCounter={setCounter} setTimer={setTimer} timer={timer} numberHits={numberHits} maxChampions={maxChampions} />
         <TextMaxChamp maxChampions={maxChampions} numberHits={numberHits} />
       </Box>
       <Box

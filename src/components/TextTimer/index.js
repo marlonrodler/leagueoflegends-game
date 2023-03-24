@@ -17,7 +17,7 @@ function TextTimer({ counter, setCounter, setTimer, timer, numberHits, maxChampi
 
       return () => clearInterval(constructTimer);
     }
-  }, [setCounter, setTimer, counter]);
+  }, [setCounter, setTimer, counter, numberHits, maxChampions]);
 
   return (
     <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{timer}</Text>

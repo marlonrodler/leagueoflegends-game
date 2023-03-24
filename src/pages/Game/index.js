@@ -49,7 +49,7 @@ function Game() {
         setShowMessageWin(true);
       }
     }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin]);
+  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer]);
 
 
   const handleRestartGame = () => {
