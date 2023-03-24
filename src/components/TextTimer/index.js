@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Text } from "@chakra-ui/react";
 
-function TextTimer({ counter, setCounter, setTimer, timer, numberHits, maxChampions }) {
+function TextTimer({ counter, setCounter, setTimer, timer }) {
 
   useEffect(() => {
     const constructTimer = counter > 0 && setInterval(() => {
@@ -14,7 +14,7 @@ function TextTimer({ counter, setCounter, setTimer, timer, numberHits, maxChampi
     }, 1000);
 
     return () => clearInterval(constructTimer);
-  }, [setCounter, setTimer, counter, numberHits, maxChampions]);
+  }, [setCounter, setTimer, counter]);
 
   return (
     <Text color='#c4b998' fontSize='16px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>{timer}</Text>
