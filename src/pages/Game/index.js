@@ -52,7 +52,7 @@ function Game() {
         setStartPlay(false);
       }
     }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer, setTimer, timerFinal, setTimerFinal]);
+  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer, timerFinal, setTimerFinal]);
 
 
   const handleRestartGame = () => {
@@ -93,7 +93,7 @@ function Game() {
       />
 
       {
-        (startPlay && timerFinal === '') && (
+        startPlay && (
           <ModalInput
             numberHits={numberHits} 
             maxChampions={maxChampions} 
@@ -119,7 +119,7 @@ function Game() {
       }
 
       {
-        !startPlay &&
+        (!startPlay && timerFinal === '') &&
         (
           <ModalPlay
             setDifficulty={setDifficulty}
