@@ -38,7 +38,24 @@ function Game() {
     if (maxChampions === 0) {
       getChampions(true);
     }
-  }, [maxChampions]);
+
+    if (startPlay) {
+      if (counter === 0) {
+        messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
+        setShowMessageLose(true);
+      }
+      else if (numberHits === maxChampions) {
+        setShowMessageWin(true);
+      }
+    }
+  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin]);
+
+
+  const handleRestartGame = () => {
+    setShowMessageLose(false);
+    setShowMessageWin(false);
+    setStartPlay(false);
+  }
 
   const getChampions = async (isActive) => {
     try {
@@ -113,7 +130,7 @@ function Game() {
         (showMessageLose || showMessageWin) &&
         (
           <ModalMessage
-            setStartPlay={setStartPlay}
+            handleRestartGame={handleRestartGame}
             showMessageLose={showMessageLose}
             messageLose={messageLose}
             messageWin={messageWin}

@@ -1,37 +1,12 @@
 import { Box, Button, Text } from "@chakra-ui/react";
-import React, {useEffect} from "react";
+import React from "react";
 
-function ModalMessage({ 
-  setStartPlay,
-  showMessageLose, 
-  messageLose, 
-  messageWin, 
-  startPlay,
-  counter,
-  numberHits,
-  maxChampions,
-  setShowMessageLose,
-  setShowMessageWin
+function ModalMessage({
+  handleRestartGame,
+  showMessageLose,
+  messageLose,
+  messageWin
 }) {
-
-  useEffect(() => {
-    if (startPlay) {
-      if (counter === 0) {
-        messageLose.description = `Você acertou ${numberHits} de ${maxChampions} campeões.`;
-        setShowMessageLose(true);
-      }
-      else if (numberHits === maxChampions) {
-        setShowMessageWin(true);
-      }
-    }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin]);
-
-
-  const handleRestartGame = () => {
-    setShowMessageLose(false);
-    setShowMessageWin(false);
-    setStartPlay(false);
-  }
 
   return (
     <Box
