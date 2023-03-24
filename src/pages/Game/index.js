@@ -48,7 +48,7 @@ function Game() {
       else if (numberHits === maxChampions) {
         setTimerFinal(timer);
         setShowMessageWin(true);
-        messageWin.description = `Você acertou todos os campeões em um tempo de ${timerFinal}.`;
+        messageWin.description = `Você acertou todos os campeões em um tempo de ${timer}.`;
         setStartPlay(false);
       }
     }
