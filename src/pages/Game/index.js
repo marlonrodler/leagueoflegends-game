@@ -19,6 +19,7 @@ function Game() {
   const [startPlay, setStartPlay] = useState(false);
   const [timer, setTimer] = useState('');
   const [timerFinal, setTimerFinal] = useState('');
+  const [maxCounter, setMaxCounter] = useState(0);
   const [loading, setLoading] = useState(false);
   const [difficulty, setDifficulty] = useState('');
   const [showMessageLose, setShowMessageLose] = useState(false);
@@ -46,13 +47,17 @@ function Game() {
         setShowMessageLose(true);
       }
       else if (numberHits === maxChampions) {
-        setTimerFinal(timer);
         setShowMessageWin(true);
-        messageWin.description = `Você acertou todos os campeões em um tempo de ${timer}.`;
+        const calcCounter = maxCounter - counter;
+        const minutes = Math.floor((calcCounter - 1) / 60);
+        const seconds = (calcCounter - 1) - minutes * 60;
+        const counterFormated = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        setTimerFinal(counterFormated);
+        messageWin.description = `Você acertou todos os campeões em um tempo de ${counterFormated}.`;
         setStartPlay(false);
       }
     }
-  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timer, timerFinal, setTimerFinal]);
+  }, [counter, startPlay, maxChampions, numberHits, messageLose, setShowMessageLose, setShowMessageWin, messageWin, timerFinal, setTimerFinal, maxCounter]);
 
 
   const handleRestartGame = () => {
@@ -95,16 +100,16 @@ function Game() {
       {
         startPlay && (
           <ModalInput
-            numberHits={numberHits} 
-            maxChampions={maxChampions} 
-            counter={counter} 
-            setCounter={setCounter} 
-            setTimer={setTimer} 
-            timer={timer} 
-            champions={champions} 
-            setChampions={setChampions} 
-            setNumberHits={setNumberHits} 
-            refChamp={refChamp} 
+            numberHits={numberHits}
+            maxChampions={maxChampions}
+            counter={counter}
+            setCounter={setCounter}
+            setTimer={setTimer}
+            timer={timer}
+            champions={champions}
+            setChampions={setChampions}
+            setNumberHits={setNumberHits}
+            refChamp={refChamp}
             difficulty={difficulty}
             timerFinal={timerFinal}
           />
@@ -128,6 +133,7 @@ function Game() {
             setNumberHits={setNumberHits}
             setStartPlay={setStartPlay}
             setLoading={setLoading}
+            setMaxCounter={setMaxCounter}
           />
         )
       }
