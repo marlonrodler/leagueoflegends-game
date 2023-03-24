@@ -46,9 +46,9 @@ function Game() {
         setShowMessageLose(true);
       }
       else if (numberHits === maxChampions) {
-        messageWin.description = `Você acertou todos os campeões em um tempo de ${timerFinal}.`;
         setTimerFinal(timer);
         setShowMessageWin(true);
+        messageWin.description = `Você acertou todos os campeões em um tempo de ${timerFinal}.`;
         setStartPlay(false);
       }
     }
@@ -59,6 +59,7 @@ function Game() {
     setShowMessageLose(false);
     setShowMessageWin(false);
     setStartPlay(false);
+    setTimerFinal('');
   }
 
   const getChampions = async (isActive) => {
@@ -92,7 +93,7 @@ function Game() {
       />
 
       {
-        startPlay && (
+        (startPlay && timerFinal === '') && (
           <ModalInput
             numberHits={numberHits} 
             maxChampions={maxChampions} 
