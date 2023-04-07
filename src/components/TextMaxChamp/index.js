@@ -1,5 +1,4 @@
 import { Text } from "@chakra-ui/react";
-import React from "react";
 
 function TextMaxChamp({ numberHits, maxChampions }) {
   return (

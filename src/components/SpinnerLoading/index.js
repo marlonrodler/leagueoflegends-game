@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Spinner } from "@chakra-ui/react";
 
-function Loading() {
+function SpinnerLoading() {
   return (
     <Box
       position={'fixed'}
@@ -9,7 +9,6 @@ function Loading() {
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
-      top={'-12px'}
       zIndex={999}
       w='100vw'
       h='100vh'
@@ -26,4 +25,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default SpinnerLoading;

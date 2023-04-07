@@ -1,11 +1,11 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
-import InputFind from "../InputFind";
-import TextMaxChamp from "../TextMaxChamp";
-import TextTimer from "../TextTimer";
+import { Box } from '@chakra-ui/react';
 
-function InputBox({ numberHits, maxChampions, counter, setCounter, setTimer, timer, champions, setChampions, setNumberHits, refChamp, difficulty }) {
-  
+import TextTimer from '../TextTimer';
+import TextMaxChamp from '../TextMaxChamp';
+import InputFind from '../InputFind';
+
+function ModalFind({ maxChampions, numberHits, setNumberHits, champions, setChampions, maxCounter, refChamp, setGameOver, setFinalCounter }) {
+
   return (
     <Box
       display={'flex'}
@@ -30,17 +30,23 @@ function InputBox({ numberHits, maxChampions, counter, setCounter, setTimer, tim
         paddingX={'8px'}
         pt={'16px'}
       >
-        <TextTimer counter={counter} setCounter={setCounter} setTimer={setTimer} timer={timer} />
+        <TextTimer maxCounter={maxCounter} setGameOver={setGameOver} setFinalCounter={setFinalCounter} />
         <TextMaxChamp maxChampions={maxChampions} numberHits={numberHits} />
       </Box>
       <Box
         w='100%'
         paddingY={'16px'}
       >
-        <InputFind champions={champions} setChampions={setChampions} numberHits={numberHits} setNumberHits={setNumberHits} refChamp={refChamp} difficulty={difficulty} />
+        <InputFind
+          champions={champions}
+          setChampions={setChampions}
+          numberHits={numberHits}
+          setNumberHits={setNumberHits}
+          refChamp={refChamp}
+        />
       </Box>
     </Box>
   )
 }
 
-export default InputBox;
+export default ModalFind

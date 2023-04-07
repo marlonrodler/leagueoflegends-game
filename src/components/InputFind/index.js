@@ -1,39 +1,38 @@
+import { useState } from "react";
+import './index.css';
 import { Input } from "@chakra-ui/react";
-import React, {useState} from "react";
 
-function InputFind({ champions, setChampions, numberHits, setNumberHits, refChamp, difficulty }) {
+function InputFind({ champions, setChampions, numberHits, setNumberHits, refChamp }) {
 
-  const [input, setInput] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-  const handleFindChampions = (name) => {
-    setInput(name);
+  const handleFindChampions = (e) => {
+    e.preventDefault();
+    const inputValue = e.target.value;
+    setInputValue(inputValue);
+    const fixInputValue = inputValue.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '');
     const newChampions = { ...champions };
-    for (const key in newChampions) {
-      let isHit = false;
 
-      if (!newChampions[key].hit) {
-        if (difficulty !== 'tryhard') {
-          if (key.toLowerCase() === name.toLowerCase()) {
-            isHit = true;
-          }
+    e.target.classList.remove('error');
+    e.target.classList.remove('success');
+
+    Object.keys(newChampions).forEach(key => {
+      if(newChampions[key] !== undefined) {
+        const fixName = newChampions[key].name.replace(/[^a-zA-Z ]/g, "").replace(/\s/g, '');
+        if (fixName.toLowerCase() === fixInputValue.toLowerCase() && !newChampions[key].hit) {
+          newChampions[key].hit = true;
+          newChampions[key].showChamp = true;
+          setNumberHits(numberHits + 1);
+          setInputValue('');
+          setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
+          e.target.classList.add('success');
         } else {
-          const region = ((newChampions[key].region.toLowerCase())).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll(' ', '');
-          if ((name.toLowerCase()).indexOf(region) !== -1 && (name.toLowerCase()).indexOf(key.toLowerCase() + ' ') !== -1) {
-            isHit = true;
-          }
+          e.target.classList.add('error');
         }
       }
+    });
 
-      if (isHit) {
-        newChampions[key].active = true;
-        newChampions[key].hit = true;
-        setTimeout(() => refChamp[key].scrollIntoView({ behavior: 'smooth' }), 0);
-        setInput('');
-        setNumberHits(numberHits + 1);
-        setChampions(newChampions);
-        return;
-      }
-    }
+    setChampions(newChampions);
   }
 
   return (
@@ -43,8 +42,8 @@ function InputFind({ champions, setChampions, numberHits, setNumberHits, refCham
       placeholder='Encontre um campeão'
       color={'#c4b998'}
       _placeholder={{ opacity: 1, color: 'rgb(147, 115, 65, 0.6)' }}
-      onChange={(e) => handleFindChampions(e.target.value)}
-      value={input}
+      onChange={(e) => handleFindChampions(e)}
+      value={inputValue}
     />
   )
 }

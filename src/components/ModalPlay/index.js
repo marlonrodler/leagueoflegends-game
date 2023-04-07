@@ -2,14 +2,12 @@ import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 import PopoverMode from "../PopoverMode";
 
-function ModalPlay({ setDifficulty, setCounter, getChampions, setNumberHits, setStartPlay, setLoading, setMaxCounter }) {
+function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter }) {
 
   const handleStartGame = (diff) => {
     setLoading(true);
-    setDifficulty(diff);
     handleSetDifficulty(diff);
-    setNumberHits(0);
-    setStartPlay(true);
+    setStartGame(true);
 
     setTimeout(() => {
       setLoading(false);
@@ -18,17 +16,10 @@ function ModalPlay({ setDifficulty, setCounter, getChampions, setNumberHits, set
 
   const handleSetDifficulty = (difficulty) => {
     if (difficulty === 'yuumi') {
-      setCounter(900);
-      setMaxCounter(900);
-      getChampions(true);
+      setMaxCounter(4);
     } else if (difficulty === 'leesin') {
-      setCounter(1200);
       setMaxCounter(1200);
-      getChampions(false);
-    } else if (difficulty === 'tryhard') {
-      setCounter(1500);
-      setMaxCounter(1500);
-      getChampions(false);
+      setShowChampion(false);
     }
   }
 
@@ -38,7 +29,6 @@ function ModalPlay({ setDifficulty, setCounter, getChampions, setNumberHits, set
       flexDirection='column'
       alignItems='center'
       justifyContent='center'
-      top={'-12px'}
       w='100vw'
       h='100vh'
       position={'fixed'}
@@ -84,15 +74,6 @@ function ModalPlay({ setDifficulty, setCounter, getChampions, setNumberHits, set
           alignItems='center'
           justifyContent='space-around'
         >
-          <PopoverMode
-            handleStartGame={handleStartGame}
-            mode="tryhard"
-            buttonModeColor="red"
-            buttonModeTitle="Tryhard"
-            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar o nome do campeão e sua região sem espaços e sem acentos, contendo espaço somente entre o nome e região."
-            textExample='Exemplo: "RITOGOMES BRASIL".'
-          />
-
           <PopoverMode
             handleStartGame={handleStartGame}
             mode="leesin"
