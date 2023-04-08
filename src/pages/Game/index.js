@@ -15,9 +15,10 @@ function Game() {
   const [finalCounter, setFinalCounter] = useState(0);
   const [finalTitle, setFinalTitle] = useState('');
   const [finalMessage, setFinalMessage] = useState('');
+  const [difficulty, setDifficulty] = useState('');
 
   return (
-    <Wrap w={'100%'} display={'flex'} pb={['170px']} backgroundColor='#0A0A0B'>
+    <Wrap w={'100%'} display={'flex'} pb={['170px']} backgroundColor='#0A0A0B' justify={'center'} justifyContent={'center'}>
       <CardChampionsList
         startGame={startGame}
         setLoading={setLoading}
@@ -31,6 +32,7 @@ function Game() {
         setFinalMessage={setFinalMessage}
         setFinalTitle={setFinalTitle}
         gameOver={gameOver}
+        difficulty={difficulty}
       />
       {loading && <SpinnerLoading />}
       {(!startGame && !gameOver.fail && !gameOver.success) &&
@@ -39,6 +41,7 @@ function Game() {
           setStartGame={setStartGame}
           setLoading={setLoading}
           setMaxCounter={setMaxCounter}
+          setDifficulty={setDifficulty}
         />
       }
       {

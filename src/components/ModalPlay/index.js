@@ -2,10 +2,11 @@ import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 import PopoverMode from "../PopoverMode";
 
-function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter }) {
+function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter, setDifficulty }) {
 
   const handleStartGame = (diff) => {
     setLoading(true);
+    setDifficulty(diff);
     handleSetDifficulty(diff);
     setStartGame(true);
 
@@ -16,7 +17,7 @@ function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter })
 
   const handleSetDifficulty = (difficulty) => {
     if (difficulty === 'yuumi') {
-      setMaxCounter(4);
+      setMaxCounter(900);
     } else if (difficulty === 'leesin') {
       setMaxCounter(1200);
       setShowChampion(false);
@@ -79,8 +80,8 @@ function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter })
             mode="leesin"
             buttonModeColor="orange"
             buttonModeTitle="Lee Sin"
-            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão sem espaços e sem acentos."
-            textExample='Exemplo: "RITOGOMES".'
+            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão"
+            textExample='Exemplo: "RITO GOMES".'
           />
 
           <PopoverMode
@@ -88,8 +89,8 @@ function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter })
             mode="yuumi"
             buttonModeColor="green"
             buttonModeTitle="Yuumi"
-            textHelp="Neste modo os campeões estarão à mostra, e você deverá colocar somente o nome do campeão sem espaços e sem acentos."
-            textExample='Exemplo: "RITOGOMES".'
+            textHelp="Neste modo os campeões estarão à mostra, e você deverá colocar somente o nome do campeão."
+            textExample='Exemplo: "RITO GOMES".'
           />
         </Box>
       </Box>

@@ -5,7 +5,8 @@ import championsSummary from "../../services/championsSummary";
 import { Wrap } from "@chakra-ui/react";
 import ModalFind from "../ModalFind";
 
-function ChampionsCardList({ setLoading, startGame, maxCounter, showChampion, setGameOver, restartGame, setRestartGame, setStartGame, setFinalCounter, setFinalMessage , gameOver, setFinalTitle}) {
+function ChampionsCardList({ 
+  setLoading, startGame, maxCounter, showChampion, setGameOver, restartGame, setRestartGame, setStartGame, setFinalCounter, setFinalMessage, gameOver, setFinalTitle, difficulty }) {
   const [champions, setChampions] = useState({});
   const [maxChampions, setMaxChampions] = useState(0);
   const [numberHits, setNumberHits] = useState(0);
@@ -21,7 +22,7 @@ function ChampionsCardList({ setLoading, startGame, maxCounter, showChampion, se
       setChangeShowChamp(showChampion);
     }
 
-    if(restartGame) {
+    if (restartGame) {
       handlerGetChampionsSummary(showChampion);
       setNumberHits(0);
       setGameOver({ success: false, fail: false });
@@ -29,12 +30,12 @@ function ChampionsCardList({ setLoading, startGame, maxCounter, showChampion, se
       setStartGame(false);
     }
 
-    if(numberHits === maxChampions && startGame && !restartGame) {
+    if (numberHits === maxChampions && startGame && !restartGame) {
       setGameOver({ success: true, fail: false });
       setStartGame(false);
     }
 
-    if(gameOver.fail && startGame && !restartGame) {
+    if (gameOver.fail && startGame && !restartGame) {
       setGameOver({ success: false, fail: true });
       setFinalMessage(`Você acertou ${numberHits} de ${maxChampions} campeões.`);
       setFinalTitle('Fora de Micão hein posição!');

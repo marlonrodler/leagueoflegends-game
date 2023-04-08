@@ -1,14 +1,14 @@
 import { CardFooter, Text, Card, WrapItem } from '@chakra-ui/react';
 import questionImg from '../../assets/imgs/question-invert.png';
 
-function CardChampion({ showChamp, name, alias, hit, refChamp, keyValue }) {
+function CardChampion({ showChamp, name, alias, hit, refChamp, keyValue, id }) {
 
   const champImg = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${alias}_0.jpg`;
 
   return (
     <WrapItem
       justifyContent={'space-between'}
-      m='0'
+      pt={'8px'}
       transition='all 0.5s ease'
       _hover={(showChamp || hit) ? { transform: ['', 'scale(1.1)'] } : ''}
       ref={(champ) => { refChamp[keyValue] = champ }}
@@ -20,13 +20,14 @@ function CardChampion({ showChamp, name, alias, hit, refChamp, keyValue }) {
         backgroundSize={(showChamp || hit) ? 'cover' : '200px'}
         backgroundPosition='center center'
         overflow={'hidden'}
-        w={'200px'}
-        h={'452px'}
+        w={['140px', '180px']}
+        h={['390px', '400px']}
         align='center'
         justifyContent={'end'}
-        border={!(showChamp || hit) ? '1px solid rgb(146, 115, 69)' : ''}
+        border={showChamp ? '' : '1px solid #927345'}
         transition={hit ? 'transform 0.6s' : ''}
         transform={(hit || showChamp) ? 'rotateY(0deg)' : 'rotateY(180deg)'}
+        _hover={{ border: '1px solid #927345' }}
       >
         <CardFooter
           w={'100%'}
@@ -36,7 +37,7 @@ function CardChampion({ showChamp, name, alias, hit, refChamp, keyValue }) {
           display={hit ? 'flex' : 'none'}
           flexDirection={'column'}
         >
-          <Text align={'center'} fontSize='xl' color={'rgb(146, 115, 69)'}>{name}</Text>
+          <Text align={'center'} fontSize='md' color={'rgb(146, 115, 69)'}>{name.toUpperCase()}</Text>
         </CardFooter>
       </Card>
     </WrapItem>
