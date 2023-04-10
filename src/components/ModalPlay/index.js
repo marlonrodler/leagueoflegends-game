@@ -80,7 +80,7 @@ function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter, s
             mode="leesin"
             buttonModeColor="orange"
             buttonModeTitle="Lee Sin"
-            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão"
+            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão."
             textExample='Exemplo: "RITO GOMES".'
           />
 
