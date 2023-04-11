@@ -7,14 +7,14 @@ import './App.css';
 import './fonts/BeaufortforLOLJa-Regular.ttf'
 
 
-import Game from './pages/Game'
+import Home from './pages/Home'
 
 function App() {
   return (
     <ChakraProvider>
       <Router>
         <Routes>
-          <Route path='/' element={<Game/>} />
+          <Route path='/' element={<Home/>} />
         </Routes>
       </Router>
     </ChakraProvider>

@@ -5,7 +5,7 @@ import SpinnerLoading from '../../components/SpinnerLoading';
 import ModalPlay from '../../components/ModalPlay';
 import ModalMessage from '../../components/ModalMessage';
 
-function Game() {
+function GameImage() {
   const [loading, setLoading] = useState(true);
   const [maxCounter, setMaxCounter] = useState(0);
   const [startGame, setStartGame] = useState(false);
@@ -68,4 +68,4 @@ function Game() {
   )
 }
 
-export default Game;
+export default GameImage;

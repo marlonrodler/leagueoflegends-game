@@ -80,7 +80,7 @@ function ModalPlay(props) {
             mode="leesin"
             buttonModeColor="orange"
             buttonModeTitle="Lee Sin"
-            textHelp="Neste modo as cartas estarão viradas, e você deverá colocar somente o nome do campeão."
+            textHelp="Nesta dificuldade as cartas estarão viradas, e você deverá colocar somente o nome do campeão."
             textExample='Exemplo: "RITO GOMES".'
           />
 
@@ -89,7 +89,7 @@ function ModalPlay(props) {
             mode="yuumi"
             buttonModeColor="green"
             buttonModeTitle="Yuumi"
-            textHelp="Neste modo os campeões estarão à mostra, e você deverá colocar somente o nome do campeão."
+            textHelp="Nesta dificuldade os campeões estarão à mostra, e você deverá colocar somente o nome do campeão."
             textExample='Exemplo: "RITO GOMES".'
           />
         </Box>
