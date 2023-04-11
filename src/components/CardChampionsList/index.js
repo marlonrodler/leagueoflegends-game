@@ -46,7 +46,13 @@ function ChampionsCardList(props) {
       const response = await championsSummary.get();
       delete response.data[0];
       for (const key in response.data) {
-        response.data[key] = { ...response.data[key], showChamp: showChamp, hit: false };
+        response.data[key] = {
+          ...response.data[key],
+          showChamp: showChamp,
+          hit: false,
+          champImg: `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${response.data[key].alias}_0.jpg`,
+          champAudio: `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/pt_br/v1/champion-choose-vo/${response.data[key].id}.ogg`
+        };
       }
 
       let newResponse = response.data;

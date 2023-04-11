@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
-import { Box, Text } from "@chakra-ui/react";
-import PopoverMode from "../PopoverMode";
+import { Box, Button, Text } from "@chakra-ui/react";
+// import PopoverMode from "../PopoverMode";
 import championsSummary from "../../services/championsSummary";
 
 function BoxGameMode({ setGameMode }) {
-  const [championId, setChampionId] = useState('');
-  const backgroundImg = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${championId}/${championId}000.jpg`;
+  const [backgroundImg, setBackgroundImg] = useState('');
 
   const handleStartGame = (mode) => {
     setGameMode(mode);
   }
 
   useEffect(() => {
-    if(championId === '') {
+    if (backgroundImg === '') {
       handlerGetChampionsSummary();
     }
-  }, [championId]);
+  }, [backgroundImg]);
 
   const handlerGetChampionsSummary = async () => {
     try {
@@ -37,7 +36,7 @@ function BoxGameMode({ setGameMode }) {
         return element !== undefined;
       });
 
-      setChampionId(newResponse[0].id);
+      setBackgroundImg(`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/${newResponse[0].id}/${newResponse[0].id}000.jpg`);
     } catch (err) {
       console.log('ERROR API: ', err);
     }
@@ -98,7 +97,22 @@ function BoxGameMode({ setGameMode }) {
           alignItems='center'
           justifyContent='space-around'
         >
-          <PopoverMode
+          <Button
+            onClick={() => handleStartGame('image')}
+            colorScheme={'green'}
+            w={'90px'}
+          >
+            Imagem
+          </Button>
+          
+          <Button
+            onClick={() => handleStartGame('audio')}
+            colorScheme={'red'}
+            w={'90px'}
+          >
+            Audio
+          </Button>
+          {/* <PopoverMode
             handleStartGame={handleStartGame}
             mode="image"
             buttonModeColor="green"
@@ -107,7 +121,7 @@ function BoxGameMode({ setGameMode }) {
             textExample=''
           />
 
-          {/* <PopoverMode
+          <PopoverMode
             handleStartGame={handleStartGame}
             mode="audio"
             buttonModeColor="red"

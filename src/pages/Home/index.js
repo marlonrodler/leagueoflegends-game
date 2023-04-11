@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GameImage from '../GameImage'
+import GameAudio from '../GameAudio'
 import BoxGameMode from '../../components/BoxGameMode'
 import { Wrap } from '@chakra-ui/react';
 
@@ -16,7 +17,8 @@ function Home() {
       justifyContent={'center'}
     >
       {gameMode === '' && <BoxGameMode setGameMode={setGameMode} />}
-      {gameMode === 'image' && <GameImage />}
+      {gameMode === 'image' && <GameImage /> }
+      {gameMode === 'audio' && <GameAudio /> }
     </Wrap>
   );
 }
