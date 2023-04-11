@@ -4,7 +4,7 @@ import TextTimer from '../TextTimer';
 import TextMaxChamp from '../TextMaxChamp';
 import InputFind from '../InputFind';
 
-function ModalFind({ maxChampions, numberHits, setNumberHits, champions, setChampions, maxCounter, refChamp, setGameOver, setFinalCounter }) {
+function ModalFind(props) {
 
   return (
     <Box
@@ -30,19 +30,19 @@ function ModalFind({ maxChampions, numberHits, setNumberHits, champions, setCham
         paddingX={'8px'}
         pt={'16px'}
       >
-        <TextTimer maxCounter={maxCounter} setGameOver={setGameOver} setFinalCounter={setFinalCounter} />
-        <TextMaxChamp maxChampions={maxChampions} numberHits={numberHits} />
+        <TextTimer maxCounter={props.maxCounter} setGameOver={props.setGameOver} setFinalCounter={props.setFinalCounter} />
+        <TextMaxChamp maxChampions={props.maxChampions} numberHits={props.numberHits} />
       </Box>
       <Box
         w='100%'
         paddingY={'16px'}
       >
         <InputFind
-          champions={champions}
-          setChampions={setChampions}
-          numberHits={numberHits}
-          setNumberHits={setNumberHits}
-          refChamp={refChamp}
+          champions={props.champions}
+          setChampions={props.setChampions}
+          numberHits={props.numberHits}
+          setNumberHits={props.setNumberHits}
+          refChamp={props.refChamp}
         />
       </Box>
     </Box>

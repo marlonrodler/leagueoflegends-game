@@ -2,25 +2,25 @@ import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 import PopoverMode from "../PopoverMode";
 
-function ModalPlay({ setShowChampion, setStartGame, setLoading, setMaxCounter, setDifficulty }) {
+function ModalPlay(props) {
 
   const handleStartGame = (diff) => {
-    setLoading(true);
-    setDifficulty(diff);
+    props.setLoading(true);
+    props.setDifficulty(diff);
     handleSetDifficulty(diff);
-    setStartGame(true);
+    props.setStartGame(true);
 
     setTimeout(() => {
-      setLoading(false);
+      props.setLoading(false);
     }, 1000);
   }
 
   const handleSetDifficulty = (difficulty) => {
     if (difficulty === 'yuumi') {
-      setMaxCounter(900);
+      props.setMaxCounter(900);
     } else if (difficulty === 'leesin') {
-      setMaxCounter(1200);
-      setShowChampion(false);
+      props.setMaxCounter(1200);
+      props.setShowChampion(false);
     }
   }
 

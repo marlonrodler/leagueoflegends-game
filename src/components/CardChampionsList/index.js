@@ -5,8 +5,7 @@ import championsSummary from "../../services/championsSummary";
 import { Wrap } from "@chakra-ui/react";
 import ModalFind from "../ModalFind";
 
-function ChampionsCardList({ 
-  setLoading, startGame, maxCounter, showChampion, setGameOver, restartGame, setRestartGame, setStartGame, setFinalCounter, setFinalMessage, gameOver, setFinalTitle, difficulty }) {
+function ChampionsCardList(props) {
   const [champions, setChampions] = useState({});
   const [maxChampions, setMaxChampions] = useState(0);
   const [numberHits, setNumberHits] = useState(0);
@@ -14,33 +13,33 @@ function ChampionsCardList({
   const refChamp = useRef(null);
 
   useEffect(() => {
-    if (maxChampions === 0 || changeShowChamp !== showChampion) {
-      handlerGetChampionsSummary(showChampion);
+    if (maxChampions === 0 || changeShowChamp !== props.showChampion) {
+      handlerGetChampionsSummary(props.showChampion);
       setTimeout(() => {
-        setLoading(false);
+        props.setLoading(false);
       }, 2000);
-      setChangeShowChamp(showChampion);
+      setChangeShowChamp(props.showChampion);
     }
 
-    if (restartGame) {
-      handlerGetChampionsSummary(showChampion);
+    if (props.restartGame) {
+      handlerGetChampionsSummary(props.showChampion);
       setNumberHits(0);
-      setGameOver({ success: false, fail: false });
-      setRestartGame(false);
-      setStartGame(false);
+      props.setGameOver({ success: false, fail: false });
+      props.setRestartGame(false);
+      props.setStartGame(false);
     }
 
-    if (numberHits === maxChampions && startGame && !restartGame) {
-      setGameOver({ success: true, fail: false });
-      setStartGame(false);
+    if (numberHits === maxChampions && props.startGame && !props.restartGame) {
+      props.setGameOver({ success: true, fail: false });
+      props.setStartGame(false);
     }
 
-    if (gameOver.fail && startGame && !restartGame) {
-      setGameOver({ success: false, fail: true });
-      setFinalMessage(`Você acertou ${numberHits} de ${maxChampions} campeões.`);
-      setFinalTitle('Fora de Micão hein posição!');
+    if (props.gameOver.fail && props.startGame && !props.restartGame) {
+      props.setGameOver({ success: false, fail: true });
+      props.setFinalMessage(`Você acertou ${numberHits} de ${maxChampions} campeões.`);
+      props.setFinalTitle('Fora de Micão hein posição!');
     }
-  }, [maxChampions, champions, setLoading, showChampion, changeShowChamp, restartGame, setGameOver, setRestartGame, setStartGame, numberHits, maxCounter, gameOver.fail, setFinalMessage, setFinalTitle, startGame]);
+  }, [maxChampions, champions, changeShowChamp, props, numberHits]);
 
   const handlerGetChampionsSummary = async (showChamp) => {
     try {
@@ -90,17 +89,17 @@ function ChampionsCardList({
         ))
       }
       {
-        startGame &&
+        props.startGame &&
         <ModalFind
           maxChampions={maxChampions}
           numberHits={numberHits}
           champions={champions}
           setChampions={setChampions}
           setNumberHits={setNumberHits}
-          maxCounter={maxCounter}
+          maxCounter={props.maxCounter}
           refChamp={refChamp}
-          setGameOver={setGameOver}
-          setFinalCounter={setFinalCounter}
+          setGameOver={props.setGameOver}
+          setFinalCounter={props.setFinalCounter}
         />
       }
 

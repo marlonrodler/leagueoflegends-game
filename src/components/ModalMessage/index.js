@@ -1,28 +1,19 @@
 import { useEffect } from "react";
 import { Box, Button, Text } from "@chakra-ui/react";
 
-function ModalMessage({
-  setRestartGame,
-  gameOver,
-  finalCounter,
-  maxCounter,
-  setFinalTitle,
-  setFinalMessage,
-  finalTitle,
-  finalMessage
-}) {
+function ModalMessage(props) {
   
 
   useEffect(() => {
-    if (gameOver.success === true) {
-      const calcCounter = maxCounter - finalCounter;
+    if (props.gameOver.success === true) {
+      const calcCounter = props.maxCounter - props.finalCounter;
       const minutes = Math.floor((calcCounter - 1) / 60);
       const seconds = (calcCounter - 1) - minutes * 60;
       const counterFormatted = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-      setFinalTitle('Parabéns!');
-      setFinalMessage(`Você acertou todos os campeões em um tempo de ${counterFormatted}.`);
+      props.setFinalTitle('Parabéns!');
+      props.setFinalMessage(`Você acertou todos os campeões em um tempo de ${counterFormatted}.`);
     }
-  }, [gameOver.success, maxCounter, finalCounter, setFinalMessage, setFinalTitle]);
+  }, [props]);
 
   return (
     <Box
@@ -58,12 +49,12 @@ function ModalMessage({
           <Box>
             <Text p={'8px'} textAlign={'center'} color='#c4b998' fontSize='18px' fontWeight='bold' textTransform='uppercase' letterSpacing='2px'>
               {
-                finalTitle
+                props.finalTitle
               }
             </Text>
             <Text p={'8px'} textAlign={'center'} color='#c4b998' fontSize='16px' fontWeight='bold' letterSpacing='2px'>
               {
-                finalMessage
+                props.finalMessage
               }
             </Text>
           </Box>
@@ -71,7 +62,7 @@ function ModalMessage({
             pt={'16px'}
           >
             <Button
-              onClick={() => setRestartGame(true)}
+              onClick={() => props.setRestartGame(true)}
               colorScheme='yellow'
             >
               JOGAR NOVAMENTE

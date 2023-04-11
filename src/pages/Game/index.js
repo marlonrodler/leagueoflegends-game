@@ -18,7 +18,14 @@ function Game() {
   const [difficulty, setDifficulty] = useState('');
 
   return (
-    <Wrap w={'100%'} display={'flex'} pb={['170px']} backgroundColor='#0A0A0B' justify={'center'} justifyContent={'center'}>
+    <Wrap
+      w={'100%'}
+      display={'flex'}
+      pb={['170px']}
+      backgroundColor='#0A0A0B'
+      justify={'center'}
+      justifyContent={'center'}
+    >
       <CardChampionsList
         startGame={startGame}
         setLoading={setLoading}
