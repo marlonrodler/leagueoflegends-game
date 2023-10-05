@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import GameImage from '../GameImage'
-import GameAudio from '../GameAudio'
-import BoxGameMode from '../../components/BoxGameMode'
+// import GameAudio from '../GameAudio'
+// import BoxGameMode from '../../components/BoxGameMode'
 import { Wrap } from '@chakra-ui/react';
 
 function Home() {
-  const [gameMode, setGameMode] = useState('');
+  // const [gameMode, setGameMode] = useState('');
 
   return (
     <Wrap
