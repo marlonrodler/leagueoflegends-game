@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/leagueoflegends-game/static/css/main.3d896fb2.css",
-    "main.js": "/leagueoflegends-game/static/js/main.9ccfd12d.js",
+    "main.js": "/leagueoflegends-game/static/js/main.a5a4570b.js",
     "static/js/787.67505372.chunk.js": "/leagueoflegends-game/static/js/787.67505372.chunk.js",
     "static/media/BeaufortforLOLJa-Regular.ttf": "/leagueoflegends-game/static/media/BeaufortforLOLJa-Regular.06d0cfb3bd89bf1f2df1.ttf",
     "static/media/play-invert.png": "/leagueoflegends-game/static/media/play-invert.9eb2b308d3e437eba5e4.png",
     "static/media/question-invert.png": "/leagueoflegends-game/static/media/question-invert.15f99a65b3e783864c84.png",
     "index.html": "/leagueoflegends-game/index.html",
     "main.3d896fb2.css.map": "/leagueoflegends-game/static/css/main.3d896fb2.css.map",
-    "main.9ccfd12d.js.map": "/leagueoflegends-game/static/js/main.9ccfd12d.js.map",
+    "main.a5a4570b.js.map": "/leagueoflegends-game/static/js/main.a5a4570b.js.map",
     "787.67505372.chunk.js.map": "/leagueoflegends-game/static/js/787.67505372.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3d896fb2.css",
-    "static/js/main.9ccfd12d.js"
+    "static/js/main.a5a4570b.js"
   ]
 }
