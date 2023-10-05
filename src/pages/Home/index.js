@@ -16,9 +16,10 @@ function Home() {
       justify={'center'}
       justifyContent={'center'}
     >
-      {gameMode === '' && <BoxGameMode setGameMode={setGameMode} />}
+      {/* {gameMode === '' && <BoxGameMode setGameMode={setGameMode} />}
       {gameMode === 'image' && <GameImage /> }
-      {gameMode === 'audio' && <GameAudio /> }
+      {gameMode === 'audio' && <GameAudio /> } */}
+      <GameImage />
     </Wrap>
   );
 }
