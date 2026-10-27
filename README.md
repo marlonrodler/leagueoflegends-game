@@ -1,6 +1,6 @@
 # Champions Challenge
 
-Quantos campeões de League of Legends você consegue nomear antes de o tempo acabar?
+Quantos campeões de League of Legends você consegue acertar antes que o tempo acabe?
 
 **Jogar:** https://marlonrodler.github.io/leagueoflegends-game/
 
@@ -10,8 +10,8 @@ Escolha a dificuldade e digite o nome de cada campeão. Acento, espaço, apóstr
 
 | Dificuldade | Tempo | Cartas |
 |---|---|---|
-| Yuumi (fácil) | 15 minutos | à mostra: você vê o campeão |
-| Lee Sin (difícil) | 20 minutos | viradas: você lembra de cabeça |
+| Yuumi (fácil) | 15 minutos | abertas: você vê o campeão |
+| Lee Sin (difícil) | 20 minutos | viradas: você digita de memória |
 
 Quando um nome também é o começo de outro (como "Vi", de Viego e Viktor), o acerto pede **Enter** para confirmar. No fim, dá para ver os campeões que faltaram.
 

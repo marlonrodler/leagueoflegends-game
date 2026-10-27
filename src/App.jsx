@@ -145,9 +145,9 @@ export default function App() {
           <section className="panel panel--menu" aria-labelledby="menu-title">
             <h2 id="menu-title" className="panel__title">Prepare-se para o desafio</h2>
             <p className="panel__lead">
-              Você consegue acertar o nome de todos os <strong>{total}</strong> campeões de League of Legends antes de o tempo acabar?
+              Quantos dos <strong>{total}</strong> campeões de League of Legends você consegue acertar antes que o tempo acabe?
             </p>
-            <p className="panel__hint">Digite o nome de cada campeão. Acento, espaço e apóstrofo não importam.</p>
+            <p className="panel__hint">Digite o nome de cada campeão. Não precisa de acento, espaço nem apóstrofo.</p>
             <div className="modes">
               {Object.values(DIFFICULTIES).map((d) => (
                 <button key={d.id} type="button" className={`mode mode--${d.id}`} onClick={() => start(d.id)}>

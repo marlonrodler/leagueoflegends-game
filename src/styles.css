@@ -99,7 +99,8 @@ a { color: var(--gold); }
 @keyframes reveal { from { transform: scale(0.92); filter: brightness(2); } }
 
 /* Painéis (menu e resultado) */
-.overlay { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 16px; background: rgb(1 10 19 / 0.6); overflow-y: auto; }
+.overlay { position: fixed; inset: 0; z-index: 30; display: flex; padding: 16px; background: rgb(1 10 19 / 0.6); overflow-y: auto; }
+.overlay > .panel { margin: auto; } /* centraliza sem cortar o topo quando a tela é baixa */
 .panel {
   width: min(100%, 560px); padding: clamp(24px, 5vw, 40px);
   background: var(--panel); text-align: center;

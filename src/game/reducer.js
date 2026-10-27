@@ -8,7 +8,7 @@ export const DIFFICULTIES = {
     level: 'Fácil',
     minutes: 15,
     reveal: true,
-    help: 'As cartas ficam à mostra: você vê o campeão e digita o nome.',
+    help: 'Cartas abertas: você vê o campeão e digita o nome.',
   },
   leesin: {
     id: 'leesin',
@@ -16,7 +16,7 @@ export const DIFFICULTIES = {
     level: 'Difícil',
     minutes: 20,
     reveal: false,
-    help: 'As cartas ficam viradas: você precisa lembrar os nomes de cabeça.',
+    help: 'Cartas viradas: você digita os nomes de memória.',
   },
 };
 
