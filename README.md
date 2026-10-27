@@ -25,7 +25,7 @@ React 18 e Vite. Testes com Vitest e Testing Library. Títulos na fonte Cinzel (
 
 ## Rodar localmente
 
-Precisa de Node.js 18 ou mais novo.
+Precisa de Node.js 20.19 ou mais novo.
 
 ```bash
 npm install
